@@ -1,0 +1,51 @@
+body {
+	font-family: Monospace;
+
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+}
+
+#canvas3D{
+	height: calc(90vh);
+	width: 100%;
+
+	background-color: black;
+}
+.container{
+
+	height: 800px;
+	width: 100%;
+
+	background-color: red;
+
+	display: flex;
+	flex-flow: wrap;
+}
+.container--header{
+	height: calc(10vh);
+	width: 100%;
+
+	background-color: blue; 
+	
+	text-align: center;
+}
+.container--header img{
+	height: 80%;
+}
+.container--content{
+
+	height: 100%;
+	width: 100%;
+	max-width: 960px;
+}
+.bio{
+	flex-flow: row wrap;
+}
+.col{
+	flex: 1;
+	align-self: center;
+
+
+}
