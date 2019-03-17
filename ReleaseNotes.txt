@@ -1,4 +1,8 @@
 V0.0.1 ================ PORTFOLIO ============
 
+- ReadME.md removed
+
+V0.0.1 ================ PORTFOLIO ============
+
 - ThreeJS implemented
 - Created Divs template
