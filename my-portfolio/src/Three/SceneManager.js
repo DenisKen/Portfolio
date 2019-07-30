@@ -13,6 +13,7 @@ class SceneManager extends Component{
         // document.body.appendChild( renderer.domElement );
         // use ref as a mount point of the Three.js scene instead of the document.body
         this.mount.appendChild( renderer.domElement );
+        console.log(this.mount.setAttribute("class", "Canvas3D"));
         var light = new THREE.AmbientLight( 0x404040 ); // soft white light
         scene.add( light );
         var loader = new FBXLoader();
@@ -28,7 +29,6 @@ class SceneManager extends Component{
                 }
             });
             scene.add(object3d);
-            console.log("Hi");
         });
        
         camera.position.z = 0;
