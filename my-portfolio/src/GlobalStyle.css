@@ -1,4 +1,10 @@
-.GlobalTitle{
+.Global-Content{
+	width: 100%;
+    max-width: 1152px;
+
+    margin: 0 auto;
+}
+.Global-Title{
     font-family: Verdana;
     font-size: 32px;
 }
