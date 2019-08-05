@@ -3,10 +3,10 @@ import './MyProjects.css';
 
 import Project from './Project';
 
-import koolImage from './Images/Project1/Cover.png'; 
+import project1 from './Images/Project1/Main.jpg'; 
 //Images
 const images = {
-    koolImage  
+    project1  
 };
 
 const myProjects = (props) => {
@@ -15,10 +15,27 @@ const myProjects = (props) => {
     return(
         <div className="Global-Content">
             <p className="Title Global-Title"> Some of my favourites projects </p>
+            <div className="Projects-Content">
             <Project  
-                image={images.koolImage}
-                alt="denis"
+                
+                image={images.project1}
+                alt="lipsync"
             />
+            <Project  
+
+                image={images.project1}
+                alt="owi"
+            />
+            <Project  
+                image={images.project1}
+                alt=""
+            />
+            <Project  
+                image={images.project1}
+                alt="TIKI"
+            />
+            </div>
+            
         </div>
     )    
 }

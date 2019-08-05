@@ -1,10 +1,3 @@
-.Content{
-	width: 100%;
-    max-width: 1152px;
-
-    margin: 0 auto;
-}
-
 .Title{
     text-align: left;
 }
@@ -15,17 +8,30 @@
 .Description{
     height: 300px;
     width: 600px;
-
+    
     text-align: left;
     vertical-align: top;
     border: 3px solid black;
 }
 
-.Image{
+.Skills{
     height: 400px;
     width: 400px;
 
     margin-left: 30px;
+
     border: 3px solid black;
     vertical-align: auto;
+}
+
+.Skills li{
+    list-style: none; 
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    padding: .5em;
+    margin: .5em;
+    background: #222;
+    color: #fff;
+    letter-spacing: 1px;    
 }
