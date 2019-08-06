@@ -10,18 +10,21 @@ import ali_fire from './Images/Ali_Fire.png';
 const aboutMe = (props) => {
 
     return(
-        <div className="Global-Content">
-            <p className="Title Global-Title">A little about Ali and Me</p>
-            <div className="SubContent">
-                <div className="Description">
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, oluptate velit essident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+        <div className="AboutMe-Content Global-Background">
+            <div className="Global-Content">
+                <p className="AboutMe-Title Global-Title">Denis Ken. Prazer.</p>
+                <div className="AboutMe-SubContent">
+                    <div className="AboutMe-Description Global-Text-Description">
+                        <p> Sou Desenvolvedor web e de jogos. Nas horas vagas crio robôs, e Ali 
+                            Ali é uma invenção minha. Numa época em que tudo é automatizado</p>
+                    </div>
+                    <div className="AboutMe-Image">
+                        <img src={ali_flying} alt={props.alt}></img>
+                        <img src={ali_fire} alt={props.alt}></img>
+                    </div>
                 </div>
-                <div className="Image">
-                    <img src={ali_flying} alt={props.alt}></img>
-                    <img src={ali_fire} alt={props.alt}></img>
-                </div>
+            
             </div>
-           
         </div>
     )
     

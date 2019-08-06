@@ -10,10 +10,11 @@ class SceneManager extends Component{
         const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight );
+        scene.background = new THREE.Color( 0xfafafa );
         // document.body.appendChild( renderer.domElement );
         // use ref as a mount point of the Three.js scene instead of the document.body
         this.mount.appendChild( renderer.domElement );
-        console.log(this.mount.setAttribute("class", "Canvas3D"));
+        this.mount.setAttribute("class", "Three-Canvas3D Global-Background");
         var light = new THREE.AmbientLight( 0x404040 ); // soft white light
         scene.add( light );
         var loader = new FBXLoader();

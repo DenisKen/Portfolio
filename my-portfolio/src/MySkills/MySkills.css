@@ -1,11 +1,11 @@
-.Title{
+.MySkills-Title{
     text-align: left;
 }
-.SubContent{
+.MySkills-SubContent{
     display: flex;
     justify-content: left;
 }
-.Description{
+.MySkills-Description{
     height: 300px;
     width: 600px;
     
@@ -14,7 +14,7 @@
     border: 3px solid black;
 }
 
-.Skills{
+.MySkills-Skills{
     height: 400px;
     width: 400px;
 
@@ -24,7 +24,12 @@
     vertical-align: auto;
 }
 
-.Skills li{
+.MySkills-Skills ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+.MySkills-Skills li{
     list-style: none; 
     display: flex;
     font-size: 18px;
@@ -34,4 +39,8 @@
     background: #222;
     color: #fff;
     letter-spacing: 1px;    
+}
+
+.MySkills-Skills img{
+    margin-right: 5px;
 }

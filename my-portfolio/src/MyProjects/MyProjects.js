@@ -13,29 +13,31 @@ const myProjects = (props) => {
 
 
     return(
-        <div className="Global-Content">
-            <p className="Title Global-Title"> Some of my favourites projects </p>
-            <div className="Projects-Content">
-            <Project  
-                
-                image={images.project1}
-                alt="lipsync"
-            />
-            <Project  
+        <div className="Global-Background MyProjects-Content">
+            <div className="Global-Content">
+                <p className="MyProjects-Title Global-Title"> Some of my favourites projects </p>
+                <div className="MyProjects-Content">
+                <Project  
+                    
+                    image={images.project1}
+                    alt="lipsync"
+                />
+                <Project  
 
-                image={images.project1}
-                alt="owi"
-            />
-            <Project  
-                image={images.project1}
-                alt=""
-            />
-            <Project  
-                image={images.project1}
-                alt="TIKI"
-            />
+                    image={images.project1}
+                    alt="owi"
+                />
+                <Project  
+                    image={images.project1}
+                    alt=""
+                />
+                <Project  
+                    image={images.project1}
+                    alt="TIKI"
+                />
+                </div>
+                
             </div>
-            
         </div>
     )    
 }

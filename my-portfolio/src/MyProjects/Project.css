@@ -1,14 +1,13 @@
-.Project{
+.Project-Content{
     max-width: 493px;
 }
-
-.Project:nth-of-type(2n){
+.Project-Content:nth-of-type(2n){
     margin-top: 6em;
 }
-.Picture{
+.Project-Picture{
     cursor: pointer;   
 }
-.Picture--TextLabel{
+.Project-Picture--TextLabel{
     font-size: 24px;
     font-weight: 700;
     text-align: center;

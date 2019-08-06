@@ -1,26 +1,20 @@
-.Content{
-	width: 100%;
-    max-width: 1152px;
-
-    margin: 0 auto;
-    margin-left: auto;
-    margin-right: auto;
+.MyProjects-Content{
+    background-color:  #DEDEE1;
 }
-.Projects-Content{
+.MyProjects-Content{
     display: flex;
     flex-wrap: wrap;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    background-color: red;
 }
-.Title{
+.MyProjects-Title{
     text-align: left;
 }
-.SubContent{
+.MyProjects-SubContent{
     display: flex;
     justify-content: left;
 }
-.Description{
+.MyProjects-Description{
     height: 300px;
     width: 600px;
     
@@ -29,7 +23,7 @@
     border: 3px solid black;
 }
 
-.Image{
+.MyProjects-Image{
     height: 400px;
     width: 400px;
 

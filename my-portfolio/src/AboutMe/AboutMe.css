@@ -1,18 +1,15 @@
-.Content{
-	width: 100%;
-    max-width: 1152px;
-
-    margin: 0 auto;
+.AboutMe-Content{
+	background-color:  #DEDEE1;
 }
 
-.Title{
+.AboutMe-Title{
     text-align: left;
 }
-.SubContent{
+.AboutMe-SubContent{
     display: flex;
     justify-content: left;
 }
-.Description{
+.AboutMe-Description{
     height: 300px;
     width: 600px;
 
@@ -21,7 +18,7 @@
     border: 3px solid black;
 }
 
-.Image{
+.AboutMe-Image{
     height: 400px;
     width: 400px;
 
