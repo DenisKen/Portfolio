@@ -33,7 +33,7 @@ const myProjects = (props) => {
                 />
                 <Project  
                     image={images.project1}
-                    alt="TIKI"
+                    alt="tiki"
                 />
                 </div>
                 

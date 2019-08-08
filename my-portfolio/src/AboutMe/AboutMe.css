@@ -5,15 +5,17 @@
 .AboutMe-Title{
     text-align: left;
 }
+
 .AboutMe-SubContent{
     display: flex;
     justify-content: left;
+    flex-flow: row wrap;
 }
 .AboutMe-Description{
     height: 300px;
     width: 600px;
 
-    text-align: left;
+    align-items: left;
     vertical-align: top;
     border: 3px solid black;
 }
@@ -25,4 +27,18 @@
     margin-left: 30px;
     border: 3px solid black;
     vertical-align: auto;
+}
+@media only screen and (max-width: 1080px){
+    .AboutMe-Title{
+        text-align: center;
+    }
+    .AboutMe-SubContent{
+        justify-content: center;
+    }
+    .AboutMe-Description{
+        text-align: center;
+    }
+    .AboutMe-Image{
+        margin-left: 0px;
+    }
 }

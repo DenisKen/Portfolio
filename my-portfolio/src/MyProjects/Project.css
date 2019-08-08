@@ -1,5 +1,6 @@
 .Project-Content{
-    max-width: 493px;
+    width: 45%;
+    /*max-width: 493px;*/
 }
 .Project-Content:nth-of-type(2n){
     margin-top: 6em;

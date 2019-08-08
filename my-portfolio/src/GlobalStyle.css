@@ -1,4 +1,5 @@
 body{
+    overflow-x: hidden;
     background-color: #FAFAFA;
     color: #686677;
     font-family: Circular, sans-serif, Arial;
@@ -27,4 +28,13 @@ body{
 
     color: #686677;
     font-size: 20px;
+}
+
+.Shrink-1{
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.Shrink-3{
+    flex-grow: 1;
+    flex-shrink: 3;
 }

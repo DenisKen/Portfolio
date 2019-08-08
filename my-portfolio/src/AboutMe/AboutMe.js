@@ -15,11 +15,12 @@ const aboutMe = (props) => {
                 <p className="AboutMe-Title Global-Title">Denis Ken. Prazer.</p>
                 <div className="AboutMe-SubContent">
                     <div className="AboutMe-Description Global-Text-Description">
-                        <p> Sou Desenvolvedor web e de jogos. Nas horas vagas crio robôs, e Ali 
-                            Ali é uma invenção minha. Numa época em que tudo é automatizado</p>
+                        <p> Sou Desenvolvedor full-stackoverflow e nas horas vagas crio robôs como a Ali.</p>
+                        <p> Numa época em que tudo é automatizado, nada melhor do que automatizar seu próprio portifólio</p>
+                        
                     </div>
                     <div className="AboutMe-Image">
-                        <img src={ali_flying} alt={props.alt}></img>
+                        <img className="Shrink-1" src={ali_flying} alt={props.alt}></img>
                         <img src={ali_fire} alt={props.alt}></img>
                     </div>
                 </div>
