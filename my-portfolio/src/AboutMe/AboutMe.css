@@ -9,31 +9,37 @@
 .AboutMe-SubContent{
     display: flex;
     justify-content: left;
-    flex-flow: row wrap;
 }
 .AboutMe-Description{
     height: 300px;
-    width: 600px;
+    width: 540px;   
 
-    align-items: left;
-    vertical-align: top;
-    border: 3px solid black;
+    text-align: left;
+    
+}
+.AboutMe-Description p {
+    line-height: 1.3em;
 }
 
 .AboutMe-Image{
-    height: 400px;
-    width: 400px;
-
-    margin-left: 30px;
-    border: 3px solid black;
+    height: 300px;
+    width: 540px;
+    
     vertical-align: auto;
 }
-@media only screen and (max-width: 1080px){
+.AboutMe-Image img{
+    height: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: left;
+}
+@media only screen and (max-width: 1170px){
     .AboutMe-Title{
         text-align: center;
     }
     .AboutMe-SubContent{
         justify-content: center;
+        flex-flow: row wrap;
     }
     .AboutMe-Description{
         text-align: center;

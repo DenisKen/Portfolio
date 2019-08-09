@@ -11,9 +11,11 @@ const mySkills = () => {
             <div className="Global-Content">
                 <p className="MySkills-Title Global-Title"> What are my capability</p>
                 <div className="MySkills-SubContent"> 
-                    <div className="MySkills-Description">
-                        <p> Desenvolvedor web e mobile. Atuei em diversos projetos com diferentes necessidades. </p>
-                        <p> A busca pelo novo sempre foi forte. De desenvolvedor em jogos, me aprofundei em desenvolvimento web por curiosidade e em aplicativos feitos com React-Native</p>
+                    <div className="MySkills-Description Global-Text-Description">
+                        <p> Atuei em diversos projetos com diferentes necessidades. </p>
+                        <br></br>
+                        <p> A busca pelo novo sempre foi forte. De desenvolvedor em jogos, me aprofundei em desenvolvimento web por curiosidade e em aplicativos feitos em React-Native</p>
+                        <br></br>
                     </div>
                     <div className="MySkills-Skills">
                         <ul>

@@ -6,11 +6,15 @@ const project = (props) => {
 
     return (
         <div className="Project-Content" style={{marginTop: props.marginTop}}>
-            <picture className="Project-Picture">
-                <img src={props.image} alt={props.alt}/>
-                <div className="Project-Picture--TextLabel"> WIRL </div>
-            </picture>
-            
+            <div className="Project-Picture">
+                <div>
+                    <div className="Project-Picture--Active">
+                        <img src={props.gif} alt={props.alt}/>
+                    </div>
+                    <img className="Project-Picture--Static" src={props.image} alt={props.alt}/>
+                </div>
+            </div>
+            <div className="Project-Picture--TextLabel"> {props.subtitle} </div>
         </div>
     )
 }

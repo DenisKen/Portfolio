@@ -1,14 +1,39 @@
 .Project-Content{
     width: 45%;
-    /*max-width: 493px;*/
+    
 }
 .Project-Content:nth-of-type(2n){
     margin-top: 6em;
 }
 .Project-Picture{
-    cursor: pointer;   
+    cursor: pointer;
+
+    overflow: hidden;
 }
+.Project-Picture img{
+    transition: all 0.3s;
+    transform: scale(1);   
+}
+.Project-Picture:hover img{
+    transform: scale(1.1);
+}
+
+.Project-Picture--Static{
+    z-index: 1;
+}
+.Project-Picture--Static:hover{
+    opacity: 0;
+}
+.Project-Picture--Active{
+    display: flex;
+    justify-content: center;
+}
+.Project-Picture--Active img{
+    position: absolute;
+}
+
 .Project-Picture--TextLabel{
+    
     font-size: 24px;
     font-weight: 700;
     text-align: center;

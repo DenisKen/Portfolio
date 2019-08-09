@@ -4,6 +4,13 @@ body{
     color: #686677;
     font-family: Circular, sans-serif, Arial;
 }
+* p{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+    margin-right: 40px;
+}
 
 .Global-Background{
     align-items: center;
@@ -17,17 +24,21 @@ body{
     max-width: 1152px;
 
     margin: 0 auto;
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-bottom: 32px;
 }
 .Global-Title{
     font-family: Verdana;
     font-size: 32px;
     font-weight: bold;
     color:#1b1b1b;
+
+    margin: 32px 0;
 }
 .Global-Text-Description{
-
     color: #686677;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .Shrink-1{

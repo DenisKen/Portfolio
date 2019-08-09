@@ -3,11 +3,16 @@ import './MyProjects.css';
 
 import Project from './Project';
 
-import project1 from './Images/Project1/Main.jpg'; 
+import imageProject_1 from './Images/Project1/Main.jpg'; 
+import gifProject_1 from './Images/Project1/Giphy.gif'; 
 //Images
 const images = {
-    project1  
+    imageProject_1  
 };
+
+const gifs = {
+    gifProject_1
+}
 
 const myProjects = (props) => {
 
@@ -19,21 +24,29 @@ const myProjects = (props) => {
                 <div className="MyProjects-Content">
                 <Project  
                     
-                    image={images.project1}
+                    image={images.imageProject_1}
+                    gif={images.imageProject_1}
                     alt="lipsync"
+                    subtitle="OWI"
                 />
                 <Project  
 
-                    image={images.project1}
+                    image={images.imageProject_1}
+                    gif={images.imageProject_1}
                     alt="owi"
+                    subtitle="OWI"
                 />
                 <Project  
-                    image={images.project1}
+                    image={images.imageProject_1}
+                    gif={images.imageProject_1}
                     alt=""
+                    subtitle="OWI"
                 />
                 <Project  
-                    image={images.project1}
+                    image={images.imageProject_1}
+                    gif={images.imageProject_1}
                     alt="tiki"
+                    subtitle="OWI"
                 />
                 </div>
                 
