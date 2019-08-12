@@ -12,6 +12,7 @@ import Contact from './Contact/Contact';
 function App() {
   return (
     <div className="App">
+        <SceneManager/>
         <AboutMe/>
         <MySkills/>
         <MyProjects/>

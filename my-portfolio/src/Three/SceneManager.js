@@ -1,7 +1,8 @@
 //First of all we need to create the React component that will host the canvas and the Three.js application.
 import React, {Component} from 'react';
+import * as FBXLoader from 'three-fbxloader-offical';
 import * as THREE from 'three';
-import * as FBXLoader from 'three-fbx-loader';
+
 
 class SceneManager extends Component{
 
@@ -17,22 +18,16 @@ class SceneManager extends Component{
         this.mount.setAttribute("class", "Three-Canvas3D Global-Background");
         var light = new THREE.AmbientLight( 0x404040 ); // soft white light
         scene.add( light );
-        var loader = new FBXLoader();
-        console.log(loader);
-        var texture = new THREE.TextureLoader().load("./Three/Models/Ali/diffuse_01.png");
-        loader.load('./Three/Models/Ali/Ali.fbx', function (object3d) {
-            object3d.traverse(function (child) {
-                if (child instanceof THREE.Mesh) {
-            
-                    // apply texture
-                    child.material.map = texture
-                    child.material.needsUpdate = true;
-                }
-            });
+        let loader = new FBXLoader();
+
+        loader.load('./Models/Robot/Robot.fbx', (object3d) => {
+
             scene.add(object3d);
+            console.log("Model Lodaded >>>>>>>>>>>>>>>>>>>>>>");
         });
        
         camera.position.z = 0;
+        
         var animate = function () {
           requestAnimationFrame( animate );
           renderer.render( scene, camera );
