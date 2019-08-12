@@ -21,7 +21,7 @@ const myProjects = (props) => {
         <div className="Global-Background MyProjects-Content">
             <div className="Global-Content">
                 <p className="MyProjects-Title Global-Title"> Some of my favourites projects </p>
-                <div className="MyProjects-Content">
+                <div className="MyProjects-Content--Projects">
                 <Project  
                     
                     image={images.imageProject_1}

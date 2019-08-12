@@ -1,3 +1,22 @@
-.Contact--Content{
-    height: 300px;
+.Contact-Content{
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.Contact-Description--Links{
+    display: flex;
+    justify-content: left;
+
+    flex-flow: column;
+}
+.Contact-Description--Links a{
+    color: #686677;
+    text-decoration:none;
+}
+
+.Contact-Description--Rights{
+    display: block;
+    text-align: right;
 }

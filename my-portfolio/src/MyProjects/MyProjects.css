@@ -1,14 +1,19 @@
 .MyProjects-Content{
     background-color:  #DEDEE1;
+
+    display: flex;
+    
+    justify-content: center;
 }
-.MyProjects-Content{
+.MyProjects-Title{
+    text-align: left;
+}
+.MyProjects-Content--Projects{
+
     display: flex;
     flex-wrap: wrap;
     -webkit-box-pack: justify;
     justify-content: space-between;
-}
-.MyProjects-Title{
-    text-align: left;
 }
 .MyProjects-SubContent{
     display: flex;
@@ -29,4 +34,14 @@
 
     border: 3px solid black;
     vertical-align: auto;
+}
+
+@media only screen and (max-width: 1170px){
+
+    .MyProjects-Title{
+        text-align: center;
+    }
+    .MyProjects-SubContent{
+        justify-content: center;
+    }
 }
