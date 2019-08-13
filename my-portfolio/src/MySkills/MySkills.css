@@ -32,6 +32,8 @@
     margin-block-end: 0px;
 }
 .MySkills-Skills li{
+
+    user-select: none;
     list-style: none; 
     display: flex;
     font-size: 18px;
@@ -42,9 +44,19 @@
     color: #fff;
     letter-spacing: 1px;    
 }
-
+.MySkills-Skills li:hover{
+    cursor: pointer;
+}
 .MySkills-Skills img{
     margin-right: 5px;
+}
+
+.MySkills-Skills--Icon{
+    width: 32px;
+    height: 32px;
+
+    fill:white;
+    margin-right: 7px;
 }
 
 @media only screen and (max-width: 1170px){
