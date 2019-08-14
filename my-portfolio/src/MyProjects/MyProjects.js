@@ -24,27 +24,18 @@ const myProjects = (props) => {
                 <div className="MyProjects-Content--Projects">
                 <Project  
                     
-                    image={images.imageProject_1}
-                    gif={images.imageProject_1}
                     alt="lipsync"
                     subtitle="OWI"
                 />
                 <Project  
-
-                    image={images.imageProject_1}
-                    gif={images.imageProject_1}
                     alt="owi"
                     subtitle="OWI"
                 />
                 <Project  
-                    image={images.imageProject_1}
-                    gif={images.imageProject_1}
-                    alt=""
+                    alt="aa"
                     subtitle="OWI"
                 />
                 <Project  
-                    image={images.imageProject_1}
-                    gif={images.imageProject_1}
                     alt="tiki"
                     subtitle="OWI"
                 />
