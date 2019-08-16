@@ -3,15 +3,16 @@ import './MyProjects.css';
 
 import Project from './Project';
 
-import imageProject_1 from './Images/Project1/Main.jpg'; 
-import gifProject_1 from './Images/Project1/Giphy.gif'; 
-//Images
+import imageProject_1 from './Images/Project1/Main.jpeg'; 
+
+import videoProject_1 from './Videos/Project1/Tiki.mp4';
+
 const images = {
     imageProject_1  
 };
 
-const gifs = {
-    gifProject_1
+const videos = {
+    videoProject_1
 }
 
 const myProjects = (props) => {
@@ -23,9 +24,10 @@ const myProjects = (props) => {
                 <p className="MyProjects-Title Global-Title"> Some of my favourites projects </p>
                 <div className="MyProjects-Content--Projects">
                 <Project  
-                    
-                    alt="lipsync"
-                    subtitle="OWI"
+                    image={images.imageProject_1}
+                    video={videos.videoProject_1}
+                    alt="tiki"
+                    subtitle="TIKI"
                 />
                 <Project  
                     alt="owi"

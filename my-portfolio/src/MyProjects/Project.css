@@ -18,11 +18,11 @@
     transition: all 0.3s;
     transform: scale(1);   
 }
-.Project-Picture:hover img{
-    transform: scale(1.1);
-}
 
 .Project-Picture--Static{
+    position: absolute;
+    width: 512px;
+    height: 288px;
     z-index: 1;
 }
 .Project-Picture--Static:hover{
@@ -31,9 +31,19 @@
 .Project-Picture--Active{
     display: flex;
     justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    margin: auto;
+    text-align: center;
 }
-.Project-Picture--Active img{
-    position: absolute;
+.Project-Video{
+    height: 100%;
+    width: 100%;
+
+    margin: auto;
+    text-align: center;
 }
 
 .Project-Picture--TextLabel{
