@@ -4,6 +4,7 @@ import * as FBXLoader from 'three-fbxloader-offical';
 import * as THREE from 'three';
 
 
+
 class SceneManager extends Component{
 
     componentDidMount() {
@@ -20,7 +21,7 @@ class SceneManager extends Component{
         scene.add( light );
         let loader = new FBXLoader();
 
-        loader.load('./Models/Robot/Robot.fbx', (object3d) => {
+        loader.load('/Models/Robot/Robot.fbx', (object3d) => {
 
             scene.add(object3d);
             console.log("Model Lodaded >>>>>>>>>>>>>>>>>>>>>>");
