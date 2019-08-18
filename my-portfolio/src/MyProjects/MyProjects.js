@@ -23,7 +23,7 @@ const myProjects = (props) => {
             <div className="Global-Content">
                 <p className="MyProjects-Title Global-Title"> Some of my favourites projects </p>
                 <div className="MyProjects-Content--Projects">
-                <Project  
+                <Project 
                     image={images.imageProject_1}
                     video={videos.videoProject_1}
                     alt="tiki"
