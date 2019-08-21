@@ -2,6 +2,7 @@
     width: 512px;
     height: 288px;
     
+    
 }
 .Project-Content:nth-of-type(2n){
     margin-top: 6em;
@@ -11,11 +12,12 @@
     width: 512px;
     height: 288px;
 
+
+    
     background-color: black;
     overflow: hidden;
 }
 .Project-Picture img{
-    transition: all 0.3s;
     transform: scale(1);   
 }
 
@@ -24,11 +26,15 @@
     width: 512px;
     height: 288px;
     z-index: 1;
+
+    transition: width 0.5s, height 0.5s;
 }
 .Project-Picture--Static:hover{
     opacity: 0;
 }
 .Project-Picture--Active{
+
+    
     display: flex;
     justify-content: center;
 
@@ -39,9 +45,11 @@
     text-align: center;
 }
 .Project-Video{
+
+    transition: width 0.5s, height 0.5s;
     height: 100%;
     width: 100%;
-
+        
     margin: auto;
     text-align: center;
 }
@@ -57,5 +65,36 @@
 
     .Project-Content{
         margin-top: 6em;
+    }
+}
+
+@media only screen and (max-width: 512px){
+
+    .Project-Content{
+        height: 216px;
+        width: 384px;
+    }
+    .Project-Picture{
+        height: 216px;
+        width: 384px;
+    }   
+    .Project-Picture--Static{
+        height: 216px;
+        width: 384px;
+    }
+}
+
+@media only screen and (max-width: 384px){
+    .Project-Content{
+        height: 144px;
+        width: 256px;
+    }
+    .Project-Picture{
+        height: 144px;
+        width: 256px;
+    }   
+    .Project-Picture--Static{
+        height: 144px;
+        width: 256px;
     }
 }
