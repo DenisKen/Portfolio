@@ -1,0 +1,56 @@
+.MyProjects-Content{
+    background-color:  #DEDEE1;
+
+    display: flex;
+    
+    justify-content: center;
+}
+.MyProjects-Title{
+    text-align: left;
+}
+.MyProjects-Content--Projects{
+
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+.MyProjects-SubContent{
+    display: flex;
+    justify-content: left;
+}
+.MyProjects-Description{
+    height: 300px;
+    width: 600px;
+    
+    text-align: left;
+    vertical-align: top;
+    border: 3px solid black;
+}
+
+.MyProjects-Image{
+    height: 400px;
+    width: 400px;
+
+    border: 3px solid black;
+    vertical-align: auto;
+}
+
+@media only screen and (max-width: 1160px){
+
+    .MyProjects-Title{
+        text-align: center;
+    }
+    .MyProjects-SubContent{
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 1140px){
+
+    .MyProjects-Content--Projects{
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}

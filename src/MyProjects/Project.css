@@ -1,0 +1,61 @@
+.Project-Content{
+    width: 512px;
+    height: 288px;
+    
+}
+.Project-Content:nth-of-type(2n){
+    margin-top: 6em;
+}
+.Project-Picture{
+    cursor: pointer;
+    width: 512px;
+    height: 288px;
+
+    background-color: black;
+    overflow: hidden;
+}
+.Project-Picture img{
+    transition: all 0.3s;
+    transform: scale(1);   
+}
+
+.Project-Picture--Static{
+    position: absolute;
+    width: 512px;
+    height: 288px;
+    z-index: 1;
+}
+.Project-Picture--Static:hover{
+    opacity: 0;
+}
+.Project-Picture--Active{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    margin: auto;
+    text-align: center;
+}
+.Project-Video{
+    height: 100%;
+    width: 100%;
+
+    margin: auto;
+    text-align: center;
+}
+
+.Project-Picture--TextLabel{
+    
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1140px){
+
+    .Project-Content{
+        margin-top: 6em;
+    }
+}

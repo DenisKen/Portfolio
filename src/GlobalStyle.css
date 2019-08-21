@@ -1,0 +1,52 @@
+body{
+    overflow-x: hidden;
+    background-color: #FAFAFA;
+    color: #686677;
+    font-family: Circular, sans-serif, Arial;
+}
+* p{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+    margin-right: 40px;
+}
+
+.Global-Background{
+    align-items: center;
+    min-width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.Global-Content{
+	width: 100%;
+    max-width: 1080px;
+
+    margin: 0 auto;
+    margin-left: 32px;
+    margin-right: 32px;
+    margin-bottom: 32px;
+}
+.Global-Title{
+
+    font-family: Verdana;
+    font-size: 32px;
+    font-weight: bold;
+    color:#1b1b1b;
+
+    margin: 32px 0;
+}
+.Global-Text-Description{
+    color: #686677;
+    font-size: 18px;
+}
+
+.Shrink-1{
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.Shrink-3{
+    flex-grow: 1;
+    flex-shrink: 3;
+}
