@@ -8,7 +8,7 @@ const contact = () => {
         <div className="Global-Background Contact-Content">
             <div className="Global-Content">
                 <div className="Contact-Description--Links">
-                    <p> hey@denisken.com </p>
+                    <p> <a href="mailto:hey@denisken.com"> hey@denisken.com </a> </p>
                     <br></br>
                     <p><a href="https://www.linkedin.com/in/denisken/">linkedin.com/denisken</a></p>
                     <br></br>
