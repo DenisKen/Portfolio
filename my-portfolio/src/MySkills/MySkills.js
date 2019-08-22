@@ -52,6 +52,10 @@ const mySkills = () => {
                                 <Icon_Three className="MySkills-Skills--Icon"/>
                                 <p>ThreeJS</p>
                             </li>
+                            <li>
+                                <Icon_Three className="MySkills-Skills--Icon"/>
+                                <p>Construct 2</p>
+                            </li>
                         </ul>
                     </div>  
                 </div>

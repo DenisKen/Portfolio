@@ -18,19 +18,13 @@ const aboutMe = (props) => {
                         <br></br>
                         <p> Numa época em que tudo é automatizado, nada melhor do que automatizar seu próprio portifólio.</p>
                         <br></br>
-                        <p> Sou formado pelo Senac em Jogos Digitais e por curiosidade, estudei desenvolvimento web sozinho</p>
-                        
-                    </div>
-                    <div className="AboutMe-Image">
-                        <img className="Shrink-1" src={ali_flying} alt={props.alt}></img>
+                        <p> Sou formado pelo Senac em Jogos Digitais e por curiosidade, estudei desenvolvimento web sozinho</p>  
                     </div>
                 </div>
-            
             </div>
+            <img className="AboutMe-Image Shrink-1" src={ali_flying} alt={props.alt}></img>
         </div>
     )
-    
-
 }
 
 export default aboutMe;

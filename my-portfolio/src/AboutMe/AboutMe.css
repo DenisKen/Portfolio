@@ -1,5 +1,6 @@
 .AboutMe-Content{
-	background-color:  #DEDEE1;
+    background-color:  #DEDEE1;
+    position: relative;
 }
 
 .AboutMe-Title{
@@ -21,10 +22,13 @@
 }
 
 .AboutMe-Image{
-    height: 300px;
+    position: absolute;
+    height: 100%;
     width: 540px;
-    
-    vertical-align: auto;
+
+    object-fit: cover;
+    top: 0px;
+    right: 0px;
 }
 .AboutMe-Image img{
     height: 100%;
@@ -42,9 +46,5 @@
     }
     .AboutMe-Description{
         text-align: center;
-    }
-    .AboutMe-Image{
-        margin-top: 10px;
-        margin-left: 0px;
     }
 }
