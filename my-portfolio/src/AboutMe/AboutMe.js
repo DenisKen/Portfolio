@@ -4,7 +4,7 @@ import './AboutMe.css';
 import '../GlobalStyle.css';
 
 //Images
-import ali_flying from './Images/Ali_Flying.png';
+import ali_flying from './Images/Me.jpg';
 
 const aboutMe = (props) => {
 
