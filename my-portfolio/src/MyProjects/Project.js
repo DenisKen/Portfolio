@@ -4,7 +4,7 @@ import './Project.css'
 const project = (props) => {
     
     const VideoElem = React.createElement('video');
-
+    
     return (
         <div className="Project-Content" style={{marginTop: props.marginTop}}>
             <div className="Project-Picture">

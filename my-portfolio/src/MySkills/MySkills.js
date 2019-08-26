@@ -1,8 +1,6 @@
 import React from 'react';
 import './MySkills.css';
 
-import icon_react from 'simple-icons/icons/react';
-
 import { ReactComponent as Icon_Javascript} from 'simple-icons/icons/javascript.svg';
 import { ReactComponent as Icon_HTML} from 'simple-icons/icons/html5.svg';
 import { ReactComponent as Icon_CSS3} from 'simple-icons/icons/css3.svg';

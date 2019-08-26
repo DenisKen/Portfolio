@@ -21,6 +21,10 @@
     line-height: 1.3em;
 }
 
+.AboutMe-Image-Div{
+    display: flex;
+    justify-content: left;
+}
 .AboutMe-Image{
     position: absolute;
     height: 100%;
@@ -28,7 +32,6 @@
 
     object-fit: cover;
     top: 0px;
-    right: 0px;
 }
 .AboutMe-Image img{
     height: 100%;
@@ -47,4 +50,14 @@
     .AboutMe-Description{
         text-align: center;
     }
+    
+    .AboutMe-Image{
+        position: relative;
+        margin-top: 1em;
+    }
+}
+
+.AboutMe-ImageShrink{
+    flex-shrink: 1;
+    flex: 1 1;
 }
