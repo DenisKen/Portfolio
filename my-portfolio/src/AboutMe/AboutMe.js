@@ -1,4 +1,8 @@
 import React from 'react';
+
+import "animate.css/animate.min.css";
+import ScrollAnimation from 'react-animate-on-scroll';
+
 import './AboutMe.css';
 
 import '../GlobalStyle.css';
@@ -13,8 +17,11 @@ const aboutMe = (props) => {
         <div className="AboutMe-Content Global-Background">
             <div className="Global-Content AboutMe-SubContent">
                 <div>
-                    <p className="AboutMe-Title Global-Title">Denis Ken. Prazer.</p>
+                    <ScrollAnimation animateIn="fadeInDown" animateOnce="true">
+                        <p className="AboutMe-Title Global-Title">Denis Ken. Prazer.</p>
+                    </ScrollAnimation>
                     <div >
+                        <ScrollAnimation animateIn="fadeInLeft" animateOnce="true">    
                         <div className="AboutMe-Description Global-Text-Description">
                             <p> 22 anos. Desenvolvedor Full-StackOverFlow e nas horas vagas crio robôs como a Ali.</p>
                             <br></br>
@@ -22,11 +29,16 @@ const aboutMe = (props) => {
                             <br></br>
                             <p> Sou formado pelo Senac em Jogos Digitais e por curiosidade, estudei desenvolvimento web sozinho</p>  
                         </div>
+                        </ScrollAnimation>
                     </div>
                 </div>
                 <div className="AboutMe-Image-Div">
-                    <img className="AboutMe-Image" src={ali_flying} alt={props.alt}></img>
+                    <ScrollAnimation animateIn="fadeInRight" animateOnce="true">  
+                        <img className="AboutMe-Image" src={ali_flying} alt={props.alt}></img>
+                    </ScrollAnimation>
                 </div>
+                
+                
             </div>
            
         </div>

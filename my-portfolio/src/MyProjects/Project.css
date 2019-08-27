@@ -19,9 +19,6 @@
     width: 512px;
     height: 288px;
 
-
-    
-    background-color: black;
     overflow: hidden;
 }
 .Project-Picture img{
@@ -33,8 +30,6 @@
     width: 512px;
     height: 288px;
     z-index: 1;
-
-    transition: width 0.5s, height 0.5s;
 }
 .Project-Picture--Static:hover{
     opacity: 0;
@@ -52,8 +47,6 @@
     text-align: center;
 }
 .Project-Video{
-
-    transition: width 0.5s, height 0.5s;
     height: 100%;
     width: 100%;
         

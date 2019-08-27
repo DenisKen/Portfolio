@@ -1,4 +1,7 @@
 import React from 'react';
+import "animate.css/animate.min.css";
+import ScrollAnimation from 'react-animate-on-scroll';
+
 import './MySkills.css';
 
 import { ReactComponent as Icon_Javascript} from 'simple-icons/icons/javascript.svg';
@@ -16,44 +19,62 @@ const mySkills = () => {
     return (
         <div className="Global-Background">
             <div className="Global-Content">
-                <p className="MySkills-Title Global-Title"> What are my capability</p>
+                <ScrollAnimation animateIn="fadeInDown" animateOnce="true">
+                    <p className="MySkills-Title Global-Title"> What are my capability</p>
+                </ScrollAnimation>
                 <div className="MySkills-SubContent"> 
-                    <div className="MySkills-Description Global-Text-Description">
-                        <p> Atuei em diversos projetos com diferentes necessidades. </p>
-                        <br></br>
-                        <p> A busca pelo novo sempre foi forte. De desenvolvedor em jogos, me aprofundei em desenvolvimento web por curiosidade e em aplicativos feitos em React-Native</p>
-                        <br></br>
-                    </div>
+                    <ScrollAnimation animateIn="fadeInLeft" animateOnce="true">
+                        <div className="MySkills-Description Global-Text-Description">
+                            <p> Atuei em diversos projetos com diferentes necessidades. </p>
+                            <br></br>
+                            <p> A busca pelo novo sempre foi forte. De desenvolvedor em jogos, me aprofundei em desenvolvimento web por curiosidade e em aplicativos feitos em React-Native</p>
+                            <br></br>
+                        </div>
+                    </ScrollAnimation>
                     <div className="MySkills-Skills">
                         <ul>
-                            <li>   
-                                <Icon_Javascript className="MySkills-Skills--Icon"/>
-                                <p>Javascript</p>
-                            </li>
+                            <ScrollAnimation animateIn="rotateInUpRight" animateOnce="true">
+                                <li>   
+                                    <Icon_Javascript className="MySkills-Skills--Icon"/>
+                                    <p>Javascript</p>
+                                </li>
+                            </ScrollAnimation>
+                            <ScrollAnimation animateIn="rotateInDownLeft" animateOnce="true">
                             <li>
                                 <Icon_HTML className="MySkills-Skills--Icon"/>
                                 <p>HTML</p>
                             </li>
+                            </ScrollAnimation>
+                            <ScrollAnimation animateIn="rotateInDownRight" animateOnce="true">
                             <li>
                                 <Icon_CSS3 className="MySkills-Skills--Icon"/>
                                 <p>CSS</p>
                             </li>
+                            </ScrollAnimation>
+                            <ScrollAnimation animateIn="rotateInUpLeft" animateOnce="true">
                             <li>
                                 <Icon_React className="MySkills-Skills--Icon"/>
                                 <p>React</p>
                             </li>
+                            </ScrollAnimation>
+                            <ScrollAnimation animateIn="rotateInUpRight" animateOnce="true">
                             <li>
                                 <Icon_Unity className="MySkills-Skills--Icon"/>
                                 <p>Unity3D</p>
                             </li>
+                            </ScrollAnimation>
+                            <ScrollAnimation animateIn="rotateInDownRight" animateOnce="true">
                             <li>
                                 <Icon_Three className="MySkills-Skills--Icon"/>
                                 <p>ThreeJS</p>
                             </li>
+                            </ScrollAnimation>
+                            <ScrollAnimation animateIn="rotateInDownLeft" animateOnce="true">
                             <li>
                                 <Icon_Three className="MySkills-Skills--Icon"/>
                                 <p>Construct 2</p>
                             </li>
+                            </ScrollAnimation>
                         </ul>
                     </div>  
                 </div>
