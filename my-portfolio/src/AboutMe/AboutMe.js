@@ -8,6 +8,7 @@ import ali_flying from './Images/Me.jpg';
 
 const aboutMe = (props) => {
 
+    
     return(
         <div className="AboutMe-Content Global-Background">
             <div className="Global-Content AboutMe-SubContent">

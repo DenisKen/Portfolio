@@ -36,29 +36,33 @@ const myProjects = (props) => {
             <div className="Global-Content">
                 <p className="MyProjects-Title Global-Title"> Some of my favourites projects </p>
                 <div className="MyProjects-Content--Projects">
-                <Project 
+                <Project
                     image={images.imageProject_1}
                     video={videos.videoProject_1}
+                    className={"Project-Content-First"}
                     alt="tiki"
                     subtitle="TIKI"
                 />
                 <Project  
                     image={images.imageProject_2}
                     video={videos.videoProject_2}
-                    alt="owi"
-                    subtitle="OWI"
+                    className={""}
+                    alt="videobot"
+                    subtitle="Video Bot"
                 />
                 <Project  
                     image={images.imageProject_3}
                     video={videos.videoProject_3}
-                    alt="aa"
-                    subtitle="OWI"
+                    className={""}
+                    alt="lipsync"
+                    subtitle="Software LipSync"
                 />
                 <Project  
                     image={images.imageProject_4}
                     video={videos.videoProject_4}
-                    alt="tiki"
-                    subtitle="OWI"
+                    className={"Project-Content-Last"}
+                    alt="conarecVR"
+                    subtitle="Conarec VR"
                 />
                 </div>
                 

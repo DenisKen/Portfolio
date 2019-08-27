@@ -6,7 +6,7 @@ const project = (props) => {
     const VideoElem = React.createElement('video');
     
     return (
-        <div className="Project-Content" style={{marginTop: props.marginTop}}>
+        <div className={"Project-Content " + props.className} style={{marginTop: props.marginTop}}>
             <div className="Project-Picture">
                 <div className="Project-Picture--Active" onMouseOver={playVideo}>
                     <video className="Project-Video" loop autoPlay>
