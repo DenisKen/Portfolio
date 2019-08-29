@@ -4,7 +4,6 @@ import * as FBXLoader from 'three-fbxloader-offical';
 import * as THREE from 'three';
 import * as OrbitControls from 'three-orbitcontrols';
 
-
 class SceneManager extends Component{
 
     componentDidMount() {
@@ -12,8 +11,7 @@ class SceneManager extends Component{
         
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
-        camera.position.z = 500;
-        camera.position.y = 100;
+        
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight );
         scene.background = new THREE.Color( 0xffffff );
@@ -61,12 +59,18 @@ class SceneManager extends Component{
 
             model.position.y = -400;
         });
+        const controls = new OrbitControls(camera, renderer.domElement)
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.25;
+        controls.enableZoom = true;
+
 
         var cube;
         loader.load('/Models/Room/Cube.fbx', (object3d) => {
 
           
           cube = object3d;
+          controls.target = cube.position; 
           console.log(camera.position);
           
           scene.add(object3d);
@@ -86,15 +90,15 @@ class SceneManager extends Component{
                 child.material.needsUpdate = true;
             }
           })
+          camera.position.z = 500;
+          camera.position.x = 300;
+          camera.position.y = 100;
 
           cube.position.y = -250;
-          cube.rotate.y = 0.785398;
+          cube.rotation.y = 0.785398;
         });
         
-        const controls = new OrbitControls(camera, renderer.domElement)
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.25;
-        controls.enableZoom = true;
+        
 
         window.addEventListener( 'resize', onWindowResize, false );
 
@@ -110,6 +114,7 @@ class SceneManager extends Component{
         var animate = function () {
           requestAnimationFrame( animate );
           renderer.render( scene, camera );
+          
         };
         animate();
       }

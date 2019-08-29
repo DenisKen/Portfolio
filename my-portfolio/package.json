@@ -5,11 +5,13 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "animejs": "^3.1.0",
+    "nipplejs": "^0.8.3",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-animate-on-scroll": "^2.1.5",
     "react-device-detect": "^1.7.5",
     "react-dom": "^16.8.6",
+    "react-nipple": "^1.0.1",
     "react-scripts": "3.0.1",
     "simple-icons": "^1.13.0",
     "three": "^0.106.2",
