@@ -17,11 +17,11 @@ const aboutMe = (props) => {
         <div className="AboutMe-Content Global-Background">
             <div className="Global-Content AboutMe-SubContent">
                 <div>
-                    <ScrollAnimation animateIn="fadeInDown" animateOnce="true">
+                    <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
                         <p className="AboutMe-Title Global-Title">Denis Ken. Prazer.</p>
                     </ScrollAnimation>
                     <div >
-                        <ScrollAnimation animateIn="fadeInLeft" animateOnce="true">    
+                        <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>    
                         <div className="AboutMe-Description Global-Text-Description">
                             <p> 22 anos. Desenvolvedor Full-StackOverFlow e nas horas vagas crio robôs como a Ali.</p>
                             <br></br>
@@ -33,7 +33,7 @@ const aboutMe = (props) => {
                     </div>
                 </div>
                 <div className="AboutMe-Image-Div">
-                    <ScrollAnimation animateIn="fadeInRight" animateOnce="true">  
+                    <ScrollAnimation animateIn="fadeInRight" animateOnce={true}>  
                         <img className="AboutMe-Image" src={ali_flying} alt={props.alt}></img>
                     </ScrollAnimation>
                 </div>

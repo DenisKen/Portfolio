@@ -19,11 +19,11 @@ const mySkills = () => {
     return (
         <div className="Global-Background  MySkills-Content">
             <div className="Global-Content">
-                <ScrollAnimation animateIn="fadeInDown" animateOnce="true">
+                <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
                     <p className="MySkills-Title Global-Title"> What are my capability</p>
                 </ScrollAnimation>
                 <div className="MySkills-SubContent"> 
-                    <ScrollAnimation animateIn="fadeInLeft" animateOnce="true">
+                    <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
                         <div className="MySkills-Description Global-Text-Description">
                             <p> Atuei em diversos projetos com diferentes necessidades. </p>
                             <br></br>
@@ -33,43 +33,43 @@ const mySkills = () => {
                     </ScrollAnimation>
                     <div className="MySkills-Skills">
                         <ul>
-                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce={true}>
                                 <li>   
                                     <Icon_Javascript className="MySkills-Skills--Icon"/>
                                     <p>Javascript</p>
                                 </li>
                             </ScrollAnimation>
-                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce={true}>
                             <li>
                                 <Icon_HTML className="MySkills-Skills--Icon"/>
                                 <p>HTML</p>
                             </li>
                             </ScrollAnimation>
-                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce={true}>
                             <li>
                                 <Icon_CSS3 className="MySkills-Skills--Icon"/>
                                 <p>CSS</p>
                             </li>
                             </ScrollAnimation>
-                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce={true}>
                             <li>
                                 <Icon_React className="MySkills-Skills--Icon"/>
                                 <p>React</p>
                             </li>
                             </ScrollAnimation>
-                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce={true}>
                             <li>
                                 <Icon_Unity className="MySkills-Skills--Icon"/>
                                 <p>Unity3D</p>
                             </li>
                             </ScrollAnimation>
-                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce={true}>
                             <li>
                                 <Icon_Three className="MySkills-Skills--Icon"/>
                                 <p>ThreeJS</p>
                             </li>
                             </ScrollAnimation>
-                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce={true}>
                             <li>
                                 <Icon_Three className="MySkills-Skills--Icon"/>
                                 <p>Construct 2</p>

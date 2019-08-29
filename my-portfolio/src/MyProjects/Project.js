@@ -11,7 +11,7 @@ const project = (props) => {
     
     return (
         <div className={"Project-Content " + props.className} style={{marginTop: props.marginTop}}>
-            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
+            <ScrollAnimation animateIn="zoomIn" animateOnce={true}>
                 <div className="Project-Picture">                
                     <div className="Project-Picture--Active" onMouseOver={playVideo}>
                         <video className="Project-Video" loop autoPlay>
