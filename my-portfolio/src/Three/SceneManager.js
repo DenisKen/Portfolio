@@ -118,6 +118,7 @@ class SceneManager extends Component{
         };
         animate();
       }
+      
       render() {
         return (
           <div ref={ref => (this.mount = ref)} />
