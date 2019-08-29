@@ -53,6 +53,11 @@
     color: #fff;
     letter-spacing: 1px;    
 }
+
+.MySkills-Skills p{
+
+    margin-right: 5px;  
+}
 .MySkills-Skills li:hover{
     cursor: pointer;
 }

@@ -33,43 +33,43 @@ const mySkills = () => {
                     </ScrollAnimation>
                     <div className="MySkills-Skills">
                         <ul>
-                            <ScrollAnimation animateIn="rotateInUpRight" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
                                 <li>   
                                     <Icon_Javascript className="MySkills-Skills--Icon"/>
                                     <p>Javascript</p>
                                 </li>
                             </ScrollAnimation>
-                            <ScrollAnimation animateIn="rotateInDownLeft" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
                             <li>
                                 <Icon_HTML className="MySkills-Skills--Icon"/>
                                 <p>HTML</p>
                             </li>
                             </ScrollAnimation>
-                            <ScrollAnimation animateIn="rotateInDownRight" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
                             <li>
                                 <Icon_CSS3 className="MySkills-Skills--Icon"/>
                                 <p>CSS</p>
                             </li>
                             </ScrollAnimation>
-                            <ScrollAnimation animateIn="rotateInUpLeft" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
                             <li>
                                 <Icon_React className="MySkills-Skills--Icon"/>
                                 <p>React</p>
                             </li>
                             </ScrollAnimation>
-                            <ScrollAnimation animateIn="rotateInUpRight" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
                             <li>
                                 <Icon_Unity className="MySkills-Skills--Icon"/>
                                 <p>Unity3D</p>
                             </li>
                             </ScrollAnimation>
-                            <ScrollAnimation animateIn="rotateInDownRight" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
                             <li>
                                 <Icon_Three className="MySkills-Skills--Icon"/>
                                 <p>ThreeJS</p>
                             </li>
                             </ScrollAnimation>
-                            <ScrollAnimation animateIn="rotateInDownLeft" animateOnce="true">
+                            <ScrollAnimation animateIn="zoomIn" animateOnce="true">
                             <li>
                                 <Icon_Three className="MySkills-Skills--Icon"/>
                                 <p>Construct 2</p>
