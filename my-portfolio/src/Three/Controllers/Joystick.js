@@ -12,7 +12,7 @@ class Joystick extends Component {
                 <ReactNipple className="Joystick-Container"
                     // supports all nipplejs options
                     // see https://github.com/yoannmoinet/nipplejs#options
-                    options={{ mode: 'static', position: { top: '50%', left: '50%' },color: '#474747' }}
+                    options={{ mode: 'static', position: { top: '50%', left: '50%' }, color: '#474747'}}
                     // any unknown props will be passed to the container element, e.g. 'title', 'style' etc
                     style={{
                         outline: '1px dashed red',
@@ -26,6 +26,9 @@ class Joystick extends Component {
                 />
             </div>
         );
+    }
+    test(sceneManager) {
+        console.log(sceneManager);
     }
 }
 
