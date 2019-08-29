@@ -3,6 +3,10 @@
 
     display: flex;
     justify-content: center;
+
+    background-color: #020202;
+
+    color: #fff;
 }
 
 .Contact-Description--Links{
@@ -14,6 +18,8 @@
 .Contact-Description--Links a{
     color: #686677;
     text-decoration:none;
+
+    color: #fff;
 }
 
 .Contact-Description--Rights{

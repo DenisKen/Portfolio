@@ -1,16 +1,25 @@
+.MySkills-Content{
+    background-color: #020202;
+    
+}
 .MySkills-Title{
     text-align: left;
+    color: #fff;
 }
 
 .MySkills-SubContent{
     display: flex;
     justify-content: left;
+
+    
 }
 .MySkills-Description{
     width: 540px;
     
     text-align: left;
     vertical-align: top;
+
+    color: #fff;
 }
 .MySkills-Description p {
     line-height: 1.3em;

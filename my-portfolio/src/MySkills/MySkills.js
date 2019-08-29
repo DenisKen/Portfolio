@@ -17,7 +17,7 @@ const mySkills = () => {
     const x = require('simple-icons/icons/react');
     console.log(x.svg);
     return (
-        <div className="Global-Background">
+        <div className="Global-Background  MySkills-Content">
             <div className="Global-Content">
                 <ScrollAnimation animateIn="fadeInDown" animateOnce="true">
                     <p className="MySkills-Title Global-Title"> What are my capability</p>
