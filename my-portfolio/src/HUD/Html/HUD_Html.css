@@ -1,0 +1,34 @@
+.HUD_Html-Content{
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    
+    width: 90%;
+    font-size: 34px;
+
+    color: #fff;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+
+    left: 50%;
+    margin-left: -45%;
+    bottom: 0px;
+
+    text-align: center;
+}
+
+.HUD_Html-Content p{
+    margin-bottom: 1em;
+    margin-right: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 1160px){
+
+    .HUD_Html-Content{
+
+        width: 40%;
+        margin-left: -20%;
+
+    }
+}

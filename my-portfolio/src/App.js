@@ -3,13 +3,15 @@ import React,{Component} from 'react';
 import 'normalize.css';
 import './App.css';
 
-import SceneManager from './Three/SceneManager';
+import HUD_Html from './HUD/Html/HUD_Html.js';
 import Joystick from './Three/Controllers/Joystick';
+import SceneManager from './Three/SceneManager';
 import AboutMe from './AboutMe/AboutMe';
 import MyProjects from './MyProjects/MyProjects';
 import MySkills from './MySkills/MySkills';
 import Contact from './Contact/Contact';
 
+<<<<<<< HEAD
 class App extends Component {
   render(){
     return (
@@ -27,6 +29,20 @@ class App extends Component {
   componentDidMount(){
     this.refs.joystick.test(this.refs.sceneManager);
   }
+=======
+function App() {
+  return (
+    <div className="App">
+        <HUD_Html/>
+        <Joystick/>
+        <SceneManager/>
+        <AboutMe/>
+        <MySkills/>
+        <MyProjects/>
+        <Contact/>
+    </div>
+  );
+>>>>>>> ab20286fb2cd3e8babadf6b112a8fee775c5fb6c
 }
 
 export default App;
