@@ -4,6 +4,9 @@ import * as FBXLoader from 'three-fbxloader-offical';
 import * as THREE from 'three';
 import * as OrbitControls from 'three-orbitcontrols';
 
+
+
+
 class SceneManager extends Component{
 
     componentDidMount() {
@@ -16,7 +19,14 @@ class SceneManager extends Component{
         renderer.setSize( window.innerWidth, window.innerHeight );
         scene.background = new THREE.Color( 0xffffff );
 
+        var spriteMap = new THREE.TextureLoader().load('./Sprites/image.jpeg');
+        var spriteMaterial = new THREE.SpriteMaterial( { map: spriteMap, color: 0xffffff } );
+        var sprite = new THREE.Sprite( spriteMaterial );
+        sprite.scale.x = 1000;
+        sprite.scale.y = 1000;
 
+        sprite.position.y = -500;
+        scene.add( sprite );
         
         // document.body.appendChild( renderer.domElement );
         // use ref as a mount point of the Three.js scene instead of the document.body
