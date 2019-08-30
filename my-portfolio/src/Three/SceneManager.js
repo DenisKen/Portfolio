@@ -9,15 +9,22 @@ import * as OrbitControls from 'three-orbitcontrols';
 
 class SceneManager extends Component{
 
+    constructor(props){
+      super(props);
+
+      this.scene = null;
+
+    }
     componentDidMount() {
 
         
-        const scene = new THREE.Scene();
+        this.scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
         
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight );
-        scene.background = new THREE.Color( 0xffffff );
+        renderer.autoClear = false;
+        this.scene.background = new THREE.Color( 0xffffff );
 
         var spriteMap = new THREE.TextureLoader().load('./Sprites/image.jpeg');
         var spriteMaterial = new THREE.SpriteMaterial( { map: spriteMap, color: 0xffffff } );
@@ -26,7 +33,7 @@ class SceneManager extends Component{
         sprite.scale.y = 1000;
 
         sprite.position.y = -500;
-        scene.add( sprite );
+        this.scene.add( sprite );
         
         // document.body.appendChild( renderer.domElement );
         // use ref as a mount point of the Three.js scene instead of the document.body
@@ -34,13 +41,12 @@ class SceneManager extends Component{
         this.mount.setAttribute("class", "Three-Canvas3D Global-Background");
 
         var light = new THREE.AmbientLight( 0x404040, 3); // soft white light
-        scene.add( light );
+        this.scene.add( light );
         
         var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
         directionalLight.position.z = -400;
         directionalLight.position.y = 500;
-        scene.add( directionalLight );
-
+        this.scene.add( directionalLight );
 
         let loader = new FBXLoader();
 
@@ -51,7 +57,7 @@ class SceneManager extends Component{
             model = object3d;
             console.log(camera.position);
             
-            scene.add(object3d);
+            this.scene.add(object3d);
           
             console.log("Model Lodaded >>>>>>>>>>>>>>>>>>>>>>");
 
@@ -83,7 +89,7 @@ class SceneManager extends Component{
           controls.target = cube.position; 
           console.log(camera.position);
           
-          scene.add(object3d);
+          this.scene.add(object3d);
         
           console.log("Model Lodaded >>>>>>>>>>>>>>>>>>>>>>");
 
@@ -107,8 +113,6 @@ class SceneManager extends Component{
           cube.position.y = -250;
           cube.rotation.y = 0.785398;
         });
-        
-        
 
         window.addEventListener( 'resize', onWindowResize, false );
 
@@ -121,12 +125,23 @@ class SceneManager extends Component{
 
         }
 
-        var animate = function () {
+        const animate = () => {
+          
+          
+          //clearRect();
+          renderer.render( this.scene, camera );
+        
+          
+          //renderer.render(sceneHUD, cameraHUD); update();
+
           requestAnimationFrame( animate );
-          renderer.render( scene, camera );
           
         };
         animate();
+      }
+
+      animate = () =>{
+        
       }
       
       render() {
