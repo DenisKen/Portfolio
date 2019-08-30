@@ -6,7 +6,7 @@ import 'react-nipple/lib/styles.css';
 import './Joystick.css';
 
 class Joystick extends Component {
-    render() {
+    render(props) {
         return (
             <div >
                 <ReactNipple className="Joystick-Container"
@@ -22,13 +22,13 @@ class Joystick extends Component {
                     }}
                     // all events supported by nipplejs are available as callbacks
                     // see https://github.com/yoannmoinet/nipplejs#start
-                    onMove={(evt, data) => console.log(evt, data)}
+                    onMove={(evt, data) => test(evt, data)}
                 />
             </div>
         );
     }
-    test(sceneManager) {
-        console.log(sceneManager);
+    test(evt, data) {
+        this.props.onMove(data);
     }
 }
 

@@ -13,7 +13,7 @@ class SceneManager extends Component{
       super(props);
 
       this.scene = null;
-
+      
     }
     componentDidMount() {
 
@@ -82,6 +82,7 @@ class SceneManager extends Component{
 
 
         var cube;
+        
         loader.load('/Models/Room/Cube.fbx', (object3d) => {
 
           
@@ -125,9 +126,7 @@ class SceneManager extends Component{
 
         }
 
-        const animate = () => {
-          
-          
+        const animate = () => {   
           //clearRect();
           renderer.render( this.scene, camera );
         
@@ -139,18 +138,10 @@ class SceneManager extends Component{
         };
         animate();
       }
-
-<<<<<<< HEAD
-      movement(){
-        
-      }
-
-=======
       animate = () =>{
         
       }
-      
->>>>>>> ab20286fb2cd3e8babadf6b112a8fee775c5fb6c
+
       render() {
         return (
           <div ref={ref => (this.mount = ref)} />

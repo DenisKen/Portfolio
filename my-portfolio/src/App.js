@@ -11,12 +11,11 @@ import MyProjects from './MyProjects/MyProjects';
 import MySkills from './MySkills/MySkills';
 import Contact from './Contact/Contact';
 
-<<<<<<< HEAD
 class App extends Component {
   render(){
     return (
       <div className="App">
-          <Joystick ref="joystick"/>
+          <Joystick onMove={joystickMovement} ref="joystick"/>
           <SceneManager ref="sceneManager"/>
           <AboutMe/>
           <MySkills/>
@@ -29,20 +28,10 @@ class App extends Component {
   componentDidMount(){
     this.refs.joystick.test(this.refs.sceneManager);
   }
-=======
-function App() {
-  return (
-    <div className="App">
-        <HUD_Html/>
-        <Joystick/>
-        <SceneManager/>
-        <AboutMe/>
-        <MySkills/>
-        <MyProjects/>
-        <Contact/>
-    </div>
-  );
->>>>>>> ab20286fb2cd3e8babadf6b112a8fee775c5fb6c
+
+  joystickMovement(movement){
+      console.log(movement);
+  }
 }
 
 export default App;
