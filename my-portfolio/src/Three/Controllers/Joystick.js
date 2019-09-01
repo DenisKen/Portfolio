@@ -22,13 +22,11 @@ class Joystick extends Component {
                     }}
                     // all events supported by nipplejs are available as callbacks
                     // see https://github.com/yoannmoinet/nipplejs#start
-                    onMove={(evt, data) => test(evt, data)}
+                    onMove={(evt, data) => this.props.onMove(data)}
+                    onEnd={(evt, data) => this.props.onEnd(data)}
                 />
             </div>
         );
-    }
-    test(evt, data) {
-        this.props.onMove(data);
     }
 }
 

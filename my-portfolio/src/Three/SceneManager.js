@@ -4,8 +4,9 @@ import * as FBXLoader from 'three-fbxloader-offical';
 import * as THREE from 'three';
 import * as OrbitControls from 'three-orbitcontrols';
 
-
-
+import {MobileView} from 'react-device-detect';
+import Joystick from './Controllers/Joystick';
+import HUD_Html from '../HUD/HUD_Html';
 
 class SceneManager extends Component{
 
@@ -13,10 +14,15 @@ class SceneManager extends Component{
       super(props);
 
       this.scene = null;
-      
+      this.joystickX = 0;
+
+      this.player = null;
+      this.direction = {};
+      this.subtitle = "Now I have to print this fast and get the hell out of here... ";
     }
     componentDidMount() {
 
+        
         
         this.scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
@@ -26,15 +32,17 @@ class SceneManager extends Component{
         renderer.autoClear = false;
         this.scene.background = new THREE.Color( 0xffffff );
 
-        var spriteMap = new THREE.TextureLoader().load('./Sprites/image.jpeg');
-        var spriteMaterial = new THREE.SpriteMaterial( { map: spriteMap, color: 0xffffff } );
-        var sprite = new THREE.Sprite( spriteMaterial );
-        sprite.scale.x = 1000;
-        sprite.scale.y = 1000;
-
-        sprite.position.y = -500;
-        this.scene.add( sprite );
         
+        
+        document.addEventListener("keydown", onDocumentKeyDown, false);
+        function onDocumentKeyDown(event) {
+          var keyCode = event.which;
+         // console.log("aksodaksopk");
+          if (keyCode == 87) {
+              
+          }
+        }
+
         // document.body.appendChild( renderer.domElement );
         // use ref as a mount point of the Three.js scene instead of the document.body
         this.mount.appendChild( renderer.domElement );
@@ -55,7 +63,7 @@ class SceneManager extends Component{
 
           
             model = object3d;
-            console.log(camera.position);
+           
             
             this.scene.add(object3d);
           
@@ -79,16 +87,12 @@ class SceneManager extends Component{
         controls.enableDamping = true;
         controls.dampingFactor = 0.25;
         controls.enableZoom = true;
-
-
-        var cube;
         
-        loader.load('/Models/Room/Cube.fbx', (object3d) => {
+        loader.load('/Models/LifeStrange/Chloe.fbx', (object3d) => {
 
           
-          cube = object3d;
-          controls.target = cube.position; 
-          console.log(camera.position);
+          this.player = object3d;
+          controls.target = this.player.position; 
           
           this.scene.add(object3d);
         
@@ -111,8 +115,8 @@ class SceneManager extends Component{
           camera.position.x = 300;
           camera.position.y = 100;
 
-          cube.position.y = -250;
-          cube.rotation.y = 0.785398;
+          this.player.position.y = -250;
+          this.player.rotation.y = 0.785398;
         });
 
         window.addEventListener( 'resize', onWindowResize, false );
@@ -129,24 +133,47 @@ class SceneManager extends Component{
         const animate = () => {   
           //clearRect();
           renderer.render( this.scene, camera );
-        
-          
-          //renderer.render(sceneHUD, cameraHUD); update();
 
-          requestAnimationFrame( animate );
-          
+
+          //Player
+          //Movement
+          console.log(this.direction);
+          if (this.direction){
+            if (this.direction.x == "right")
+              this.player.position.x += 1;
+          }
+
+          requestAnimationFrame( animate ); 
+
         };
         animate();
-      }
-      animate = () =>{
-        
       }
 
       render() {
         return (
-          <div ref={ref => (this.mount = ref)} />
+          <div ref={ref => (this.mount = ref)}>
+            <MobileView>
+              <Joystick
+                onMove={this.joystick_Controller}
+                onEnd={this.joystick_Out}
+              />
+            </MobileView>
+            <HUD_Html
+              text={this.subtitle} 
+            />
+          </div>
         )
       }
+
+      joystick_Controller = (data) => {
+          //console.log(data.direction);
+          
+          this.direction = data.direction;
+      }
+      joystick_Out = (data) => {
+          this.direction = null;
+      }
+
 }
 
 export default SceneManager;

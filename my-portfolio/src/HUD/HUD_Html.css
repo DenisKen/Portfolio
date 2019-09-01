@@ -1,8 +1,32 @@
 .HUD_Html-Content{
+
+    width: 100%;
+    height: 100%;
     user-select: none;
-    pointer-events: none;
-    position: absolute;
     
+    overflow: hidden;
+   
+    position: absolute;
+}
+.HUD_Html-ViewItem{
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.HUD_Html-ViewItem--Arrow{
+
+    display: flex;
+    justify-content: space-between;
+}
+.HUD_Html-Subtitle{
+
+    position: absolute;
     width: 90%;
     font-size: 34px;
 
@@ -15,8 +39,7 @@
 
     text-align: center;
 }
-
-.HUD_Html-Content p{
+.HUD_Html-Subtitle p{
     margin-bottom: 1em;
     margin-right: 0px;
     padding: 0px;
@@ -25,7 +48,7 @@
 
 @media only screen and (min-width: 1160px){
 
-    .HUD_Html-Content{
+    .HUD_Html-Subtitle{
 
         width: 40%;
         margin-left: -20%;
