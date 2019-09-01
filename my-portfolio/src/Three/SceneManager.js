@@ -4,7 +4,7 @@ import * as FBXLoader from 'three-fbxloader-offical';
 import * as THREE from 'three';
 import * as OrbitControls from 'three-orbitcontrols';
 
-import {MobileView} from 'react-device-detect';
+import {MobileView, isBrowser} from 'react-device-detect';
 import Joystick from './Controllers/Joystick';
 import HUD_Html from '../HUD/HUD_Html';
 
@@ -22,7 +22,9 @@ class SceneManager extends Component{
     }
     componentDidMount() {
 
-        
+        if (isBrowser) {
+        	console.log("iasdiasd");
+        }
         
         this.scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
