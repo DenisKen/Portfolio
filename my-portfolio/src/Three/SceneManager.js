@@ -7,6 +7,7 @@ import * as OrbitControls from 'three-orbitcontrols';
 import {MobileView} from 'react-device-detect';
 import Joystick from './Controllers/Joystick';
 import HUD_Html from '../HUD/HUD_Html';
+import Teste from '../HUD/teste';
 
 class SceneManager extends Component{
 
@@ -24,15 +25,20 @@ class SceneManager extends Component{
       this.player = null;
       this.direction = {};
       this.subtitle = "Now I have to print this fast and get the hell out of here... ";
-     
+      
     }
     
-    componentDidMount() {
+    componentDidMount() { 
 
+        this.refs.HUDHtml.refs.HUDViewItem.enableViewItem(["photo1"]);
         this.scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
         
         const renderer = new THREE.WebGLRenderer();
+
+        //Call function here
+        //
+
         renderer.setSize( window.innerWidth, window.innerHeight );
         renderer.autoClear = false;
         this.scene.background = new THREE.Color( 0xffffff );
@@ -43,7 +49,8 @@ class SceneManager extends Component{
           var keyCode = event.which;
           console.log(this.subtitle);
           this.setState({
-              subtitle: "Teste dois"
+              subtitle: "Teste dois",
+              calltest: "testeaaaa"
           })
           
           this.subtitle= "Denis kEN GOSTOSO";
@@ -171,9 +178,9 @@ class SceneManager extends Component{
                 onEnd={this.joystick_Out}
               />
             </MobileView>
-            <HUD_Html
+            <HUD_Html ref="HUDHtml"
               showHUD={this.state.showHUD}
-              text={this.state.subtitle} 
+              text={this.state.subtitle}
             />
           </div>
         )

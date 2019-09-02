@@ -8,24 +8,22 @@ import HUD_ViewItem from './HUD_ViewItem';
 class HUD_Html extends Component {
 
     styleInteract = {
-        pointerEvents: 'none'
+        pointerEvents: 'all'
     }
     constructor(props){
         super(props);   
         
-    }
-    teste = (text) =>{
-        console.log(text);
+        
     }
 
     changeSubtitle = () =>{
         console.log("changed subtitle");
     }
+
     render(props){
         return(
             <div  style={this.styleInteract} className="HUD_Html-Content">
-                {this.props.teste}
-                <HUD_ViewItem/>
+                <HUD_ViewItem ref="HUDViewItem"/>
                 <div className="HUD_Html-Subtitle">
                     <p> {this.props.text} </p>
                 </div>
