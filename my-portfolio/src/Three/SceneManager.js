@@ -4,7 +4,7 @@ import * as FBXLoader from 'three-fbxloader-offical';
 import * as THREE from 'three';
 import * as OrbitControls from 'three-orbitcontrols';
 
-import {MobileView, isBrowser} from 'react-device-detect';
+import {MobileView} from 'react-device-detect';
 import Joystick from './Controllers/Joystick';
 import HUD_Html from '../HUD/HUD_Html';
 
@@ -13,19 +13,22 @@ class SceneManager extends Component{
     constructor(props){
       super(props);
 
+      this.state = {
+          showHUD: false,
+          subtitle: "Now I have to print this fast and get the hell out of here..."
+      } 
+
       this.scene = null;
       this.joystickX = 0;
 
       this.player = null;
       this.direction = {};
       this.subtitle = "Now I have to print this fast and get the hell out of here... ";
+     
     }
+    
     componentDidMount() {
 
-        if (isBrowser) {
-        	console.log("iasdiasd");
-        }
-        
         this.scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
         
@@ -36,14 +39,21 @@ class SceneManager extends Component{
 
         
         
-        document.addEventListener("keydown", onDocumentKeyDown, false);
-        function onDocumentKeyDown(event) {
+        document.addEventListener("keydown", (event) => {
           var keyCode = event.which;
-         // console.log("aksodaksopk");
+          console.log(this.subtitle);
+          this.setState({
+              subtitle: "Teste dois"
+          })
+          
+          this.subtitle= "Denis kEN GOSTOSO";
+          //this.teste({text: "TESTE TESTE"});
+          //console.log("aksodaksopk");
           if (keyCode == 87) {
               
           }
-        }
+        }, false);
+
 
         // document.body.appendChild( renderer.domElement );
         // use ref as a mount point of the Three.js scene instead of the document.body
@@ -139,7 +149,6 @@ class SceneManager extends Component{
 
           //Player
           //Movement
-          console.log(this.direction);
           if (this.direction){
             if (this.direction.x == "right")
               this.player.position.x += 1;
@@ -151,6 +160,8 @@ class SceneManager extends Component{
         animate();
       }
 
+      
+
       render() {
         return (
           <div ref={ref => (this.mount = ref)}>
@@ -161,7 +172,8 @@ class SceneManager extends Component{
               />
             </MobileView>
             <HUD_Html
-              text={this.subtitle} 
+              showHUD={this.state.showHUD}
+              text={this.state.subtitle} 
             />
           </div>
         )
@@ -175,7 +187,6 @@ class SceneManager extends Component{
       joystick_Out = (data) => {
           this.direction = null;
       }
-
 }
 
 export default SceneManager;

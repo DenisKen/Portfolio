@@ -8,15 +8,34 @@
    
     position: absolute;
 }
-.HUD_Html-ViewItem{
-    display: flex;
+.HUD_Html-ViewItem--Content{
     width: 100%;
     height: 100%;
+}
+.HUD_Html-ViewItem--Landscape{
 
-    justify-content: center;
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
     text-align: center;
     align-items: center;
+}
+.HUD_Html-ViewItem--MainImage{
+    width: 80%;
+}
+.HUD_Html-ViewItem--Arrow{
+    width: 100%;
+    max-width: 246px;
+    min-width: 24px;
+}
+.HUD_Html-ViewItem--Arrow-Right{
+    margin: 30px;   
+}
+.HUD_Html-ViewItem--Arrow-Left{
+    margin: 30px;   
+}
+@media screen and (orientation:portrait) {
+
 }
 
 .HUD_Html-ViewItem--Arrow{
