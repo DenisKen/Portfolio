@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {MobileView, isMobile} from 'react-device-detect';
 
-import photo1 from './Images/1.png';
-import photo2 from './Images/2.png';
+import photo1 from './Images/Formatura_1.jpg';
+import photo2 from './Images/Formatura_2.jpg';
 import photo3 from './Images/3.png';
 
-import arrom_left from './Images/Arrow_left.png';
-import arrom_right from './Images/Arrow_right.png';
+import arrom_left from './Images/Arrow_Left.png';
+import arrom_right from './Images/Arrow_Right.png';
 
-
+import close from './Images/Close.png';
 
 
 class HUD_ViewItem extends Component {
@@ -17,38 +17,26 @@ class HUD_ViewItem extends Component {
         
         this.state = {
             mainImage: null,
+            pointerEvents: 'none',
+            showHUD: 'hidden',
             leftArrow_Enabled: 'hidden',
-            rightArron_Enabled: 'hidden'
+            rightArrow_Enabled: 'hidden'
         }
 
         this.images = {
             photo1: photo1,
-            photo2: photo2
+            photo2: photo2,
+            photo3: photo3
         }
-
+        
         this.imagesToShow = [];
         this.index = 0;
-
-        
-    }
-
-    teste = () =>{
-        console.log("Function Test HUD_ViewItem");
-    }
-    componentDidMount(){
-        //this.enableViewItem(["photo1","photo2","photo3"]);
-        
-    }
-
-    leftArrow = {
-        visibility: 'hidden'
-    }
-    rightArrow = {
-        visibility: 'hidden'
     }
     
     enableViewItem = (imagesNames) =>{
-        //here we enable PointerEvents and SetVisible the HUD
+        //Reset all
+        this.imagesToShow = [];
+        this.index = 0;
         
         //We get images names and put in a array to show them.
         for (let i = 0; i < imagesNames.length; i++) {
@@ -56,15 +44,19 @@ class HUD_ViewItem extends Component {
         }
         //Set first image and show it.
         this.setState ({
-            mainImage: this.imagesToShow[0]
+            mainImage: this.imagesToShow[0],
+            pointerEvents: 'all',
+            showHUD: 'visible',
+            leftArrow_Enabled: 'hidden',
+            rightArrow_Enabled: 'hidden'
         })
 
         //VerifyArrows
-        if (this.hasPreviousImage())
-            this.enableArrowLeft();
+        if (this.hasLeftImage())
+            this.enableArrowLeft(true);
         
-        if (this.hasNextImage()){
-            this.enableArrowRight();
+        if (this.hasRightImage()){
+            this.enableArrowRight(true);
         }
         
         
@@ -73,12 +65,15 @@ class HUD_ViewItem extends Component {
 
     }
 
-    hasPreviousImage = () =>{
+    hasLeftImage = () =>{
+        if (this.index > 0)
+            return true;
         
+        return false;
     }
   
-    hasNextImage = () =>{
-        if (this.index < this.imagesToShow.length)
+    hasRightImage = () =>{
+        if (this.index < this.imagesToShow.length -1)
             return true;
         
         return false;
@@ -86,33 +81,60 @@ class HUD_ViewItem extends Component {
 
     clickArromLeft = () =>{
         
-        if (this.index <= 0)
-            return;
-
         this.index -= 1;
-        console.log("Arrow Left Clicked");
-
+    
+        this.changeImage();
     }
     clickArrowRight = () =>{
 
-        if (this.index >= this.imagesToShow.length)
-            return;
-
         this.index += 1;
-        
-      
-        console.log("Arrow Left Clicked");
-        //Change image (index and set)
-    }
 
-    enableArrowLeft = () =>{
+        this.changeImage();
+    }
+    clickClose = () =>{
+
         this.setState({
-            leftArrow_Enabled: 'visible'
+            pointerEvents: 'none',
+            showHUD: 'hidden',
+            leftArrow_Enabled: 'hidden',
+            rightArrow_Enabled: 'hidden'
         })
     }
-    enableArrowRight = () =>{
+
+    changeImage = () =>{
         this.setState({
-            rightArron_Enabled: 'visible'
+            mainImage: this.imagesToShow[this.index]
+        })
+
+        //VerifyArrows
+        if (this.hasLeftImage())
+            this.enableArrowLeft(true);
+        else
+            this.enableArrowLeft(false);
+
+        if (this.hasRightImage())
+            this.enableArrowRight(true);
+        else
+            this.enableArrowRight(false);
+    }
+    enableArrowLeft = (enable) =>{
+
+        let value = 'hidden';
+        if (enable)
+            value = 'visible'; 
+
+        this.setState({
+            leftArrow_Enabled: value
+        })
+    }
+    enableArrowRight = (enable) =>{
+
+        let value = 'hidden';
+        if (enable)
+            value = 'visible'; 
+
+        this.setState({
+            rightArrow_Enabled: value
         })
     }
     
@@ -126,7 +148,13 @@ class HUD_ViewItem extends Component {
                     </div>
                 </div>;
 
-        const landscape = <div className="HUD_Html-ViewItem--Content HUD_Html-ViewItem--Landscape">
+        const landscape = <div style={{visibility: this.state.showHUD}} className="HUD_Html-ViewItem--Content HUD_Html-ViewItem--Landscape">
+                    <input 
+                        className="HUD_Html-ViewItem--Close" 
+                        src={close}
+                        type="image"     
+                        onClick={this.clickClose}
+                    />
                     <input 
                         style={ 
                             {visibility: this.state.leftArrow_Enabled}
@@ -140,7 +168,7 @@ class HUD_ViewItem extends Component {
                     <img  className="HUD_Html-ViewItem--MainImage" src={this.state.mainImage}/>
                     <input
                         style={ 
-                            {visibility: this.state.rightArron_Enabled}
+                            {visibility: this.state.rightArrow_Enabled}
                         }
                         className="HUD_Html-ViewItem--Arrow HUD_Html-ViewItem--Arrow-Right" 
                         type="image" 

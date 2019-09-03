@@ -13,9 +13,12 @@ class HUD_Html extends Component {
     constructor(props){
         super(props);   
         
-        
+        this.teste();
     }
 
+    teste = () => {
+        console.log(this.refs);
+    }
     changeSubtitle = () =>{
         console.log("changed subtitle");
     }

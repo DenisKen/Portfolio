@@ -30,7 +30,7 @@ class SceneManager extends Component{
     
     componentDidMount() { 
 
-        this.refs.HUDHtml.refs.HUDViewItem.enableViewItem(["photo1"]);
+        
         this.scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
         
@@ -41,23 +41,16 @@ class SceneManager extends Component{
 
         renderer.setSize( window.innerWidth, window.innerHeight );
         renderer.autoClear = false;
-        this.scene.background = new THREE.Color( 0xffffff );
+        this.scene.background = new THREE.Color( 0x232323 );
 
         
         
         document.addEventListener("keydown", (event) => {
           var keyCode = event.which;
-          console.log(this.subtitle);
-          this.setState({
-              subtitle: "Teste dois",
-              calltest: "testeaaaa"
-          })
-          
-          this.subtitle= "Denis kEN GOSTOSO";
           //this.teste({text: "TESTE TESTE"});
           //console.log("aksodaksopk");
-          if (keyCode == 87) {
-              
+          if (keyCode == 65) {
+            this.refs.HUDHtml.refs.HUDViewItem.enableViewItem(["photo1", "photo2","photo3"]);
           }
         }, false);
 
