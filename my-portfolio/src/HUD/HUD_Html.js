@@ -8,7 +8,7 @@ import HUD_ViewItem from './HUD_ViewItem';
 class HUD_Html extends Component {
 
     styleInteract = {
-        pointerEvents: 'all'
+        pointerEvents: 'none'
     }
     constructor(props){
         super(props);   

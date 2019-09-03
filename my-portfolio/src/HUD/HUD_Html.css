@@ -30,8 +30,7 @@
     align-items: center;
 }
 .HUD_Html-ViewItem--MainImage{
-    width: 60%;
-    max-width: 60%;
+    width: 70%;
 }
 .HUD_Html-ViewItem--Arrow{
     width: 100%;

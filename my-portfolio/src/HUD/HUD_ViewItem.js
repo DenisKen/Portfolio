@@ -165,7 +165,9 @@ class HUD_ViewItem extends Component {
                         onClick={this.clickArromLeft}
                        
                     />
+                    <div>
                     <img  className="HUD_Html-ViewItem--MainImage" src={this.state.mainImage}/>
+                    </div>
                     <input
                         style={ 
                             {visibility: this.state.rightArrow_Enabled}
@@ -179,7 +181,7 @@ class HUD_ViewItem extends Component {
                 </div>;
                 
         return(
-            <div className="HUD_Html-ViewItem--Content">
+            <div style={{pointerEvents: this.state.pointerEvents}} className="HUD_Html-ViewItem--Content">
             {isMobile ? portrait : landscape}
             </div>
         )
