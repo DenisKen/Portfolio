@@ -20,27 +20,31 @@ class SceneManager extends Component{
       } 
 
       this.scene = null;
+      this.renderer = null;
+      this.camera = null;
+
       this.joystickX = 0;
 
       this.player = null;
       this.direction = {};
       this.subtitle = "Now I have to print this fast and get the hell out of here... ";
       
+      this.pause = false;
     }
     
     componentDidMount() { 
 
         
         this.scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
+        this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
         
-        const renderer = new THREE.WebGLRenderer();
+        this.renderer = new THREE.WebGLRenderer();
 
         //Call function here
         //
 
-        renderer.setSize( window.innerWidth, window.innerHeight );
-        renderer.autoClear = false;
+        this.renderer.setSize( window.innerWidth, window.innerHeight );
+        this.renderer.autoClear = false;
         this.scene.background = new THREE.Color( 0x232323 );
 
         
@@ -48,16 +52,22 @@ class SceneManager extends Component{
         document.addEventListener("keydown", (event) => {
           var keyCode = event.which;
           //this.teste({text: "TESTE TESTE"});
-          //console.log("aksodaksopk");
+          console.log(keyCode);
           if (keyCode == 65) {
             this.refs.HUDHtml.refs.HUDViewItem.enableViewItem(["photo1", "photo2","photo3"]);
+          }
+          if (keyCode == 66){
+            this.pause =true;
+          }
+          if (keyCode == 67){
+            this.pause = false;
           }
         }, false);
 
 
         // document.body.appendChild( renderer.domElement );
         // use ref as a mount point of the Three.js scene instead of the document.body
-        this.mount.appendChild( renderer.domElement );
+        this.mount.appendChild( this.renderer.domElement );
         this.mount.setAttribute("class", "Three-Canvas3D Global-Background");
 
         var light = new THREE.AmbientLight( 0x404040, 3); // soft white light
@@ -95,11 +105,12 @@ class SceneManager extends Component{
 
             model.position.y = -400;
         });
-        const controls = new OrbitControls(camera, renderer.domElement)
+        const controls = new OrbitControls(this.camera, this.renderer.domElement)
         controls.enableDamping = true;
         controls.dampingFactor = 0.25;
         controls.enableZoom = true;
         
+        console.log(controls);
         loader.load('/Models/LifeStrange/Chloe.fbx', (object3d) => {
 
           
@@ -123,9 +134,9 @@ class SceneManager extends Component{
                 child.material.needsUpdate = true;
             }
           })
-          camera.position.z = 500;
-          camera.position.x = 300;
-          camera.position.y = 100;
+          this.camera.position.z = 500;
+          this.camera.position.x = 300;
+          this.camera.position.y = 100;
 
           this.player.position.y = -250;
           this.player.rotation.y = 0.785398;
@@ -135,31 +146,33 @@ class SceneManager extends Component{
 
         function onWindowResize(){
 
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
+          this.camera.aspect = window.innerWidth / window.innerHeight;
+          this.camera.updateProjectionMatrix();
 
-            renderer.setSize( window.innerWidth, window.innerHeight );
+          this.renderer.setSize( window.innerWidth, window.innerHeight );
 
         }
-
-        const animate = () => {   
-          //clearRect();
-          renderer.render( this.scene, camera );
-
-
-          //Player
-          //Movement
-          if (this.direction){
-            if (this.direction.x == "right")
-              this.player.position.x += 1;
-          }
-
-          requestAnimationFrame( animate ); 
-
-        };
-        animate();
+        
+        this.update();
       }
+      update = () => {   
+          
+        if (this.pause == true)
+          return;
 
+        this.renderer.render( this.scene, this.camera );
+
+        //Player
+        //Movement
+        if (this.direction){
+          if (this.direction.x == "right")
+            this.player.position.x += 1;
+        }
+
+        requestAnimationFrame( this.update ); 
+          
+
+      };
       
 
       render() {
@@ -174,11 +187,21 @@ class SceneManager extends Component{
             <HUD_Html ref="HUDHtml"
               showHUD={this.state.showHUD}
               text={this.state.subtitle}
+              callBackViewItem_ChangedImage={this.callBackViewItem_ChangedImage}
+              callBackViewItem_Close={this.callBackViewItem_Close}
             />
           </div>
         )
       }
+      callBackViewItem_ChangedImage = (index)=>{
+        console.log("CALLBACK BITCH!",index);
+      }
+      callBackViewItem_Close = () =>{
+        console.log("Closed pressed");
+        this.pause = false;
 
+        this.update();
+      }
       joystick_Controller = (data) => {
           //console.log(data.direction);
           

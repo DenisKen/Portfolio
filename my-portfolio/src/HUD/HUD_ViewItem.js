@@ -14,7 +14,10 @@ import close from './Images/Close.png';
 class HUD_ViewItem extends Component {
     constructor(props){
         super(props);
-        
+
+        this.callBackChangedImage = this.props.callBackViewItem_ChangedImage;
+        this.callBackClose = this.props.callBackViewItem_Close;
+
         this.state = {
             mainImage: null,
             pointerEvents: 'none',
@@ -86,19 +89,20 @@ class HUD_ViewItem extends Component {
         this.changeImage();
     }
     clickArrowRight = () =>{
-
+        
         this.index += 1;
 
         this.changeImage();
     }
-    clickClose = () =>{
-
+    clickClose = (props) =>{
         this.setState({
             pointerEvents: 'none',
             showHUD: 'hidden',
             leftArrow_Enabled: 'hidden',
             rightArrow_Enabled: 'hidden'
         })
+
+        this.callBackClose();
     }
 
     changeImage = () =>{
@@ -116,6 +120,8 @@ class HUD_ViewItem extends Component {
             this.enableArrowRight(true);
         else
             this.enableArrowRight(false);
+
+        this.callBackChangedImage(this.index);
     }
     enableArrowLeft = (enable) =>{
 
@@ -139,7 +145,7 @@ class HUD_ViewItem extends Component {
     }
     
     render(props){
-
+        
         const portrait = <div className="HUD_Html-ViewItem">
                     <img  src={photo1}/>
                     <div className="HUD_Html-ViewItem--Arrow" >
@@ -154,6 +160,7 @@ class HUD_ViewItem extends Component {
                         src={close}
                         type="image"     
                         onClick={this.clickClose}
+                        draggable={false}
                     />
                     <input 
                         style={ 
@@ -163,10 +170,11 @@ class HUD_ViewItem extends Component {
                         type="image" 
                         src={arrom_left}
                         onClick={this.clickArromLeft}
+                        draggable={false}
                        
                     />
                     <div>
-                    <img  className="HUD_Html-ViewItem--MainImage" src={this.state.mainImage}/>
+                    <img draggable={false} className="HUD_Html-ViewItem--MainImage" src={this.state.mainImage}/>
                     </div>
                     <input
                         style={ 
@@ -176,12 +184,13 @@ class HUD_ViewItem extends Component {
                         type="image" 
                         src={arrom_right}
                         onClick={this.clickArrowRight}
+                        draggable={false}
                     />
                     
                 </div>;
                 
         return(
-            <div style={{pointerEvents: this.state.pointerEvents}} className="HUD_Html-ViewItem--Content">
+            <div  style={{pointerEvents: this.state.pointerEvents}} className="HUD_Html-ViewItem--Content">
             {isMobile ? portrait : landscape}
             </div>
         )
