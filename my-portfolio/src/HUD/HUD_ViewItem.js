@@ -5,8 +5,8 @@ import photo1 from './Images/Formatura_1.jpg';
 import photo2 from './Images/Formatura_2.jpg';
 import photo3 from './Images/3.png';
 
-import arrom_left from './Images/Arrow_Left.png';
-import arrom_right from './Images/Arrow_Right.png';
+import arrom_left from './Images/arrow_left.png';
+import arrom_right from './Images/arrow_right.png';
 
 import close from './Images/Close.png';
 

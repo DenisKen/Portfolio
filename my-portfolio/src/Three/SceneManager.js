@@ -9,6 +9,8 @@ import Joystick from './Controllers/Joystick';
 import HUD_Html from '../HUD/HUD_Html';
 import Teste from '../HUD/teste';
 import { LinearMipMapNearestFilter } from 'three';
+import VoicesData from '../VoicesData';
+
 
 class SceneManager extends Component{
     
@@ -39,7 +41,7 @@ class SceneManager extends Component{
     componentDidMount() { 
 
       
-      
+      console.log(VoicesData);
 
       this.scene = new THREE.Scene();
       this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
@@ -185,7 +187,7 @@ class SceneManager extends Component{
       requestAnimationFrame( this.update ); 
         
 
-      };
+    };
       
 
       render() {

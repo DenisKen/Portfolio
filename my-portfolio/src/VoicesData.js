@@ -1,4 +1,4 @@
-export const voices = {
+const voices = {
     subtitles:{
       graduationPhotos:{
         view:["Text1","Text2","Text3"]
@@ -18,3 +18,5 @@ export const voices = {
       }
     }
 }
+
+export default voices;
