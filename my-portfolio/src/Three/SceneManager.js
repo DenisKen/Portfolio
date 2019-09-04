@@ -8,9 +8,10 @@ import {MobileView} from 'react-device-detect';
 import Joystick from './Controllers/Joystick';
 import HUD_Html from '../HUD/HUD_Html';
 import Teste from '../HUD/teste';
+import { LinearMipMapNearestFilter } from 'three';
 
 class SceneManager extends Component{
-
+    
     constructor(props){
       super(props);
 
@@ -30,92 +31,74 @@ class SceneManager extends Component{
       this.subtitle = "Now I have to print this fast and get the hell out of here... ";
       
       this.pause = false;
+
+      //Audio
+      this.sound = null;
     }
     
     componentDidMount() { 
 
+      
+      
+
+      this.scene = new THREE.Scene();
+      this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
+      
+      this.renderer = new THREE.WebGLRenderer();
+
+      //Audio
+      //
+      var listener = new THREE.AudioListener();
+      this.camera.add(listener);
+
+      var sound = new THREE.Audio(listener);
+      var audioLoader = new THREE.AudioLoader();
+      
+
+      this.renderer.setSize( window.innerWidth, window.innerHeight );
+      this.renderer.autoClear = false;
+      this.scene.background = new THREE.Color( 0x232323 );
+
+      
+      
+      document.addEventListener("keydown", (event) => {
+        var keyCode = event.which;
+        //this.teste({text: "TESTE TESTE"});
+        console.log(keyCode);
+        if (keyCode == 65) {
+          //voices.subtitles["graduationPhotos"]["view"]
+          //voices.audios["graduationPhotos"]["view"]
+          this.refs.HUDHtml.refs.HUDViewItem.enableViewItem(["photo1", "photo2","photo3"]);
+        }
+        if (keyCode == 66){
+          this.setState({
+            subtitle: ""
+          });
+        }
+      }, false);
+
+
+      // document.body.appendChild( renderer.domElement );
+      // use ref as a mount point of the Three.js scene instead of the document.body
+      this.mount.appendChild( this.renderer.domElement );
+      this.mount.setAttribute("class", "Three-Canvas3D Global-Background");
+
+      var light = new THREE.AmbientLight( 0x404040, 3); // soft white light
+      this.scene.add( light );
+      
+      var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+      directionalLight.position.z = -400;
+      directionalLight.position.y = 500;
+      this.scene.add( directionalLight );
+
+      let loader = new FBXLoader();
+
+      var model;
+      loader.load('/Models/Room/Floor.fbx', (object3d) => {
+
         
-        this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
-        
-        this.renderer = new THREE.WebGLRenderer();
-
-        //Call function here
-        //
-
-        this.renderer.setSize( window.innerWidth, window.innerHeight );
-        this.renderer.autoClear = false;
-        this.scene.background = new THREE.Color( 0x232323 );
-
-        
-        
-        document.addEventListener("keydown", (event) => {
-          var keyCode = event.which;
-          //this.teste({text: "TESTE TESTE"});
-          console.log(keyCode);
-          if (keyCode == 65) {
-            this.refs.HUDHtml.refs.HUDViewItem.enableViewItem(["photo1", "photo2","photo3"]);
-          }
-          if (keyCode == 66){
-            this.pause =true;
-          }
-          if (keyCode == 67){
-            this.pause = false;
-          }
-        }, false);
-
-
-        // document.body.appendChild( renderer.domElement );
-        // use ref as a mount point of the Three.js scene instead of the document.body
-        this.mount.appendChild( this.renderer.domElement );
-        this.mount.setAttribute("class", "Three-Canvas3D Global-Background");
-
-        var light = new THREE.AmbientLight( 0x404040, 3); // soft white light
-        this.scene.add( light );
-        
-        var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
-        directionalLight.position.z = -400;
-        directionalLight.position.y = 500;
-        this.scene.add( directionalLight );
-
-        let loader = new FBXLoader();
-
-        var model;
-        loader.load('/Models/Room/Floor.fbx', (object3d) => {
-
+          model = object3d;
           
-            model = object3d;
-           
-            
-            this.scene.add(object3d);
-          
-            console.log("Model Lodaded >>>>>>>>>>>>>>>>>>>>>>");
-
-            object3d.traverse( function ( child ) {
-
-              if ( child.isMesh ) {
-
-                 
-                   // switch the material here - you'll need to take the settings from the 
-                   //original material, or create your own new settings, something like:
-                  //child.material.needsUpdate = true;
-
-              }
-            })
-
-            model.position.y = -400;
-        });
-        const controls = new OrbitControls(this.camera, this.renderer.domElement)
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.25;
-        controls.enableZoom = true;
-        
-        console.log(controls);
-        loader.load('/Models/LifeStrange/Chloe.fbx', (object3d) => {
-
-          
-          this.player = object3d;
-          controls.target = this.player.position; 
           
           this.scene.add(object3d);
         
@@ -124,53 +107,83 @@ class SceneManager extends Component{
           object3d.traverse( function ( child ) {
 
             if ( child.isMesh ) {
-              const material = new THREE.MeshPhongMaterial({
-                color: 0xFF0000,    // red (can also use a CSS color string here)
-                flatShading: true,
-                });
-                child.material = material;  
-                 // switch the material here - you'll need to take the settings from the 
-                 //original material, or create your own new settings, something like:
-                child.material.needsUpdate = true;
+
+                
+                  // switch the material here - you'll need to take the settings from the 
+                  //original material, or create your own new settings, something like:
+                //child.material.needsUpdate = true;
+
             }
           })
-          this.camera.position.z = 500;
-          this.camera.position.x = 300;
-          this.camera.position.y = 100;
 
-          this.player.position.y = -250;
-          this.player.rotation.y = 0.785398;
-        });
+          model.position.y = -400;
+      });
+      const controls = new OrbitControls(this.camera, this.renderer.domElement)
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.25;
+      controls.enableZoom = true;
+      
+      console.log(controls);
+      loader.load('/Models/LifeStrange/Chloe.fbx', (object3d) => {
 
-        window.addEventListener( 'resize', onWindowResize, false );
-
-        function onWindowResize(){
-
-          this.camera.aspect = window.innerWidth / window.innerHeight;
-          this.camera.updateProjectionMatrix();
-
-          this.renderer.setSize( window.innerWidth, window.innerHeight );
-
-        }
         
-        this.update();
+        this.player = object3d;
+        controls.target = this.player.position; 
+        
+        this.scene.add(object3d);
+      
+        console.log("Model Lodaded >>>>>>>>>>>>>>>>>>>>>>");
+
+        object3d.traverse( function ( child ) {
+
+          if ( child.isMesh ) {
+            const material = new THREE.MeshPhongMaterial({
+              color: 0xFF0000,    // red (can also use a CSS color string here)
+              flatShading: true,
+              });
+              child.material = material;  
+                // switch the material here - you'll need to take the settings from the 
+                //original material, or create your own new settings, something like:
+              child.material.needsUpdate = true;
+          }
+        })
+        this.camera.position.z = 500;
+        this.camera.position.x = 300;
+        this.camera.position.y = 100;
+
+        this.player.position.y = -250;
+        this.player.rotation.y = 0.785398;
+      });
+
+      window.addEventListener( 'resize', onWindowResize, false );
+
+      function onWindowResize(){
+
+        this.camera.aspect = window.innerWidth / window.innerHeight;
+        this.camera.updateProjectionMatrix();
+
+        this.renderer.setSize( window.innerWidth, window.innerHeight );
+
       }
-      update = () => {   
-          
-        if (this.pause == true)
-          return;
+      
+      this.update();
+    }
+    update = () => {   
+        
+      if (this.pause == true)
+        return;
 
-        this.renderer.render( this.scene, this.camera );
+      this.renderer.render( this.scene, this.camera );
 
-        //Player
-        //Movement
-        if (this.direction){
-          if (this.direction.x == "right")
-            this.player.position.x += 1;
-        }
+      //Player
+      //Movement
+      if (this.direction){
+        if (this.direction.x == "right")
+          this.player.position.x += 1;
+      }
 
-        requestAnimationFrame( this.update ); 
-          
+      requestAnimationFrame( this.update ); 
+        
 
       };
       
