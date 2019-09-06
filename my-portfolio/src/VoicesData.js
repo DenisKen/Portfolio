@@ -1,4 +1,4 @@
-const voices = {
+const voicesData = {
     graduationPhotos:{
       view: [
         { subtitle: "Text1",
@@ -27,8 +27,7 @@ const voices = {
     },
     chessChampionship:{
       lookAt:[
-        {
-          subtitle: "Minha medalha de prata do campeonato de xadrez. Sempre falo dessa medalha, mas na verdade, só conseguimos ganhar na sorte, pois tinham 4 grupos competindo",
+        { subtitle: "Minha medalha de prata do campeonato de xadrez. Sempre falo dessa medalha, mas na verdade, só conseguimos ganhar na sorte, pois tinham 4 grupos competindo",
           audioPath: "Path1"
         }
       ]
@@ -94,8 +93,7 @@ const voices = {
     },
     mug:{
       lookAt:[
-        {
-          subtitle:"Saudades de hora de aventura, o que sera que aconteceu com a dona porquinha?",
+        { subtitle:"Saudades de hora de aventura, o que sera que aconteceu com a dona porquinha?",
           audioPath:"Path1"
         }
       ]
@@ -107,8 +105,7 @@ const voices = {
         }
       ],
       animation:[
-        {
-          name: "ukulele",
+        { name: "ukulele",
           subtitle: "Text1",
           audioPath: "AudioPath"
         }
@@ -137,7 +134,8 @@ const voices = {
       view:[
         //SMS (Voce ganhou um carro! Ligue para XxXxXx e use o código 213"
         { subtitle:"Será que alguém realmente caí nisso?",
-          audioPath:"Path1"
+          audioPath:"Path1",
+          image: "Path1"
         },
         //Tinder (Mostra varias conversas nao orespondidas)
         {
@@ -165,4 +163,4 @@ const voices = {
     }
 }
 
-export default voices;
+export default voicesData;

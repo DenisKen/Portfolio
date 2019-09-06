@@ -36,14 +36,15 @@ class HUD_ViewItem extends Component {
         this.index = 0;
     }
     
-    enableViewItem = (imagesNames) =>{
+    //Do you need to pass a string array of names
+    enableViewItem = (images) =>{
         //Reset all
         this.imagesToShow = [];
         this.index = 0;
         
         //We get images names and put in a array to show them.
-        for (let i = 0; i < imagesNames.length; i++) {
-            this.imagesToShow.push(this.images[imagesNames[i]]);
+        for (let i = 0; i < images.length; i++) {
+            this.imagesToShow.push(this.images[images[i]]);
         }
         //Set first image and show it.
         this.setState ({
