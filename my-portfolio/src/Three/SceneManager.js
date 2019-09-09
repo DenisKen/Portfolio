@@ -263,7 +263,7 @@ class SceneManager extends Component{
 
     }
     update = () => {   
-      
+      console.log("aisdjiasd");
       this.deltaTime = this.clock.getDelta();
 
       if (this.pause == true)
