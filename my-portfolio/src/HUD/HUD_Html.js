@@ -10,15 +10,7 @@ class HUD_Html extends Component {
     styleInteract = {
         pointerEvents: 'none'
     }
-    constructor(props){
-        super(props);   
-        
-        this.teste();
-    }
 
-    teste = () => {
-        console.log(this.refs);
-    }
     changeSubtitle = () =>{
         console.log("changed subtitle");
     }

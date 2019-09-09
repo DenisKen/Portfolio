@@ -2,13 +2,14 @@ const voicesData = {
     graduationPhotos:{
       view: [
         { subtitle: "Text1",
-          audioPath: "Path1"
+          audioPath: "gP_1",
+          image: "gP_1"
         },
         { subtitle: "Text2",
-          audioPath: "Path2"
+          audioPath: "gP_1"
         },
         { subtitle: "Text3",
-          audioPath: "Path3"
+          audioPath: "gP_1"
         }
       ]
     },
@@ -27,7 +28,7 @@ const voicesData = {
     },
     chessChampionship:{
       lookAt:[
-        { subtitle: "Minha medalha de prata do campeonato de xadrez. Sempre falo dessa medalha, mas na verdade, só conseguimos ganhar na sorte, pois tinham 4 grupos competindo",
+        { subtitle: "Minha primeira medalha, ganhei no campeonato de xadrez. Sempre falo dessa medalha, mas na verdade, só conseguimos ganhar na sorte, pois tinham 4 grupos competindo",
           audioPath: "Path1"
         }
       ]

@@ -14,8 +14,6 @@ import { ReactComponent as Icon_Three} from 'simple-icons/icons/trakt.svg';
 
 const mySkills = () => {
 
-    const x = require('simple-icons/icons/react');
-    console.log(x.svg);
     return (
         <div className="Global-Background  MySkills-Content">
             <div className="Global-Content">

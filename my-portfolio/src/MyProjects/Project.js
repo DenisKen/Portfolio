@@ -19,7 +19,6 @@ const project = (props) => {
                 <div className="Project-Picture">                
                     <div className="Project-Picture--Active" onMouseOver={playVideo}>
                         {video}
-                        {console.log(video)}
                         <img className="Project-Picture--Static" src={props.image} alt={props.alt}/>
                     </div>        
                 </div> 

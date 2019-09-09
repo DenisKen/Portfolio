@@ -3,15 +3,17 @@ import React, {Component} from 'react';
 import * as FBXLoader from 'three-fbxloader-offical';
 import * as THREE from 'three';
 import * as OrbitControls from 'three-orbitcontrols';
+import { BloomEffect, EffectComposer, EffectPass, RenderPass, BokehEffect } from "postprocessing";
 
 import {MobileView} from 'react-device-detect';
 import Joystick from './Controllers/Joystick';
 import HUD_Html from '../HUD/HUD_Html';
-import Teste from '../HUD/teste';
-import { LinearMipMapNearestFilter } from 'three';
 import VoicesData from '../VoicesData';
 
+import Sound from './Sounds/Sound_Manager';
+import track_1 from './Sounds/Tracks/SantaMonicaDream.mp3';
 
+import voice_1 from './Sounds/Voices/blah-blah-blah.wav';
 class SceneManager extends Component{
     
     constructor(props){
@@ -19,59 +21,84 @@ class SceneManager extends Component{
 
       this.state = {
           showHUD: false,
-          subtitle: "Now I have to print this fast and get the hell out of here..."
+          subtitle: "Teste"
       } 
 
       this.scene = null;
       this.renderer = null;
       this.camera = null;
 
-      this.joystickX = 0;
+      this.clock = null;
+      this.deltaTime = 0;
 
       this.player = null;
       this.direction = {};
 
       this.currentVoiceData = [];
-      this.subtitle = "Now I have to print this fast and get the hell out of here... ";
-      
+      this.subtitle = "Teste";
       this.pause = false;
 
-      //Audio
-      this.sound = null;
-    }
-    
-    componentDidMount() { 
-
-      this.scene = new THREE.Scene();
-      this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
-      
-      this.renderer = new THREE.WebGLRenderer();
-
-      //Audio
+      //SHADER CAMERA 
+      this.composer = null;
+      this.effectPass = null;
       //
-      var listener = new THREE.AudioListener();
-      this.camera.add(listener);
+      //Audio
+      this.audioLoader = null;
+      this.soundTrack = null;
+      this.soundVoice = null;
+      this.voicesSaved = {
+        gP_1: voice_1
+      }
+    }
+    playAudio = (type, soundPath) => {
 
-      var sound = new THREE.Audio(listener);
-      var audioLoader = new THREE.AudioLoader();
+      this.audioLoader.load(soundPath, ( buffer ) => {
+        if (type == "track"){
+          this.soundTrack.setBuffer( buffer );
+          this.soundTrack.setLoop( true );
+          this.soundTrack.setVolume(0.5);
+          this.soundTrack.play();
+        }
+        else if (type == "voice"){
+          if (this.soundVoice.isPlaying){
+            this.soundVoice.stop();
+          }
+
+          this.soundVoice.setBuffer( buffer );
+          this.soundVoice.play(); 
+
+          this.soundVoice.source.onended = this.audioEnded;          
+        }
+        else if (type == "effects"){
+
+        }
+        
+
+        //this.soundTrack.setVolume( 0.5 );
+        
+      });
       
 
-      this.renderer.setSize( window.innerWidth, window.innerHeight );
-      this.renderer.autoClear = false;
-      this.scene.background = new THREE.Color( 0x232323 );
+    }
+    audioEnded = ()=>{
+      //Reset subtitle
+      this.subtitle = "";
+      this.setState({
+        subtitle: this.subtitle
+      })
+      
+    }
 
-      
-      
+    browser_Controller = () =>{
       document.addEventListener("keydown", (event) => {
         var keyCode = event.which;
         //this.teste({text: "TESTE TESTE"});
-        console.log(keyCode);
-        if (keyCode == 65) {
+        if (keyCode == 32) {
           //voices.subtitles["graduationPhotos"]["view"]
           //voices.audios["graduationPhotos"]["view"]
           //this.refs.HUDHtml.refs.HUDViewItem.enableViewItem(["photo1", "photo2","photo3"]);
           this.currentVoiceData = VoicesData["graduationPhotos"]["view"];
-
+          this.playAudio("voice", this.voicesSaved[VoicesData["graduationPhotos"]["view"][0].audioPath]);
           //Play first audio and set first subtitle
           this.setState({
             subtitle: this.currentVoiceData[0].subtitle
@@ -79,12 +106,68 @@ class SceneManager extends Component{
 
           this.refs.HUDHtml.refs.HUDViewItem.enableViewItem(["photo1", "photo2","photo3"]);
         }
-        if (keyCode == 66){
-          this.setState({
-            subtitle: ""
-          });
+        
+        //W
+        if (keyCode == 87){
+          console.log("W pressed");
+         
         }
+        //A
+        if (keyCode == 65){
+          console.log("A pressed");
+        }
+        //S
+        if (keyCode == 83){
+          console.log("S pressed");
+        }
+        //D
+        if (keyCode == 68){
+          console.log("D pressed");
+        }
+
       }, false);
+    }
+    componentDidMount() { 
+     
+
+      this.clock = new THREE.Clock();
+
+      this.scene = new THREE.Scene();
+      this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
+      
+      this.renderer = new THREE.WebGLRenderer();
+
+      //SHADER
+      this.composer = new EffectComposer(new THREE.WebGLRenderer());
+      this.effectPass = new EffectPass(this.camera, new BokehEffect());
+      this.effectPass.renderToScreen = true;
+      this.composer.addPass(new RenderPass(this.scene, this.camera));
+      this.composer.addPass(this.effectPass);
+      //
+      
+      //Audio
+      //
+      var listener = new THREE.AudioListener();
+      
+
+      this.soundTrack = new THREE.Audio(listener);
+      this.soundVoice = new THREE.Audio(listener);
+      
+      this.audioLoader = new THREE.AudioLoader(); 
+      
+      //this.playAudio("track", track_1);
+
+      this.camera.add(listener);
+      
+      
+
+      this.renderer.setSize( window.innerWidth, window.innerHeight );
+      this.renderer.autoClear = false;
+      this.scene.background = new THREE.Color( 0x232323 );
+
+      this.browser_Controller();
+      
+      
 
 
       // document.body.appendChild( renderer.domElement );
@@ -132,12 +215,12 @@ class SceneManager extends Component{
       controls.dampingFactor = 0.25;
       controls.enableZoom = true;
       
-      console.log(controls);
       loader.load('/Models/LifeStrange/Chloe.fbx', (object3d) => {
 
         
         this.player = object3d;
-        controls.target = this.player.position; 
+        var vector = new THREE.Vector3( this.player.position.x -100,this.player.position.y, this.player.position.z );
+        controls.target = vector; 
         
         this.scene.add(object3d);
       
@@ -164,24 +247,32 @@ class SceneManager extends Component{
         this.player.rotation.y = 0.785398;
       });
 
-      window.addEventListener( 'resize', onWindowResize, false );
+      window.addEventListener( 'resize', this.onWindowResize, false );
 
-      function onWindowResize(){
-
-        this.camera.aspect = window.innerWidth / window.innerHeight;
-        this.camera.updateProjectionMatrix();
-
-        this.renderer.setSize( window.innerWidth, window.innerHeight );
-
-      }
+      
       
       this.update();
     }
+
+    onWindowResize = () =>{
+      
+      this.camera.aspect = window.innerWidth / window.innerHeight;
+      this.camera.updateProjectionMatrix();
+
+      this.renderer.setSize( window.innerWidth, window.innerHeight );
+
+    }
     update = () => {   
-        
+      
+      this.deltaTime = this.clock.getDelta();
+
       if (this.pause == true)
         return;
 
+      //this.player.position.add( vector );
+      //this.player.rotation.applyQuaternion( this.camera.quaternion );
+      
+      this.composer.render(this.deltaTime);
       this.renderer.render( this.scene, this.camera );
 
       //Player
@@ -190,7 +281,9 @@ class SceneManager extends Component{
         if (this.direction.x == "right")
           this.player.position.x += 1;
       }
-
+      
+      //Shader camera
+      
       requestAnimationFrame( this.update ); 
         
 
@@ -224,10 +317,11 @@ class SceneManager extends Component{
       callBackViewItem_ChangedImage = (index)=>{
         //Change subtitle here
         this.setAudioAndSubtitle(0, this.currentVoiceData[index].subtitle);
+        //Play Sound here if have
+        this.playAudio("voice", this.voicesSaved[VoicesData["graduationPhotos"]["view"][index].audioPath]);
         
       }
       callBackViewItem_Close = () =>{
-        console.log("Closed pressed");
         this.pause = false;
 
         this.update();
