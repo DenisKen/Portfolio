@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import * as FBXLoader from 'three-fbxloader-offical';
 import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as OrbitControls from 'three-orbitcontrols';
 import { BloomEffect, EffectComposer, EffectPass, RenderPass, BokehEffect } from "postprocessing";
 
@@ -185,35 +186,33 @@ class SceneManager extends Component{
 
       let loader = new FBXLoader();
 
-      var model;
-      loader.load('/Models/Room/Floor.fbx', (object3d) => {
+      var room;
 
+      let gltfLoader = new GLTFLoader();
+      gltfLoader.load('/Models/Room/Sketchfabroomtest.gltf', (gltf ) => {
         
-          model = object3d;
-          
-          
-          this.scene.add(object3d);
-        
-          console.log("Model Lodaded >>>>>>>>>>>>>>>>>>>>>>");
-
-          object3d.traverse( function ( child ) {
-
-            if ( child.isMesh ) {
-
-                
-                  // switch the material here - you'll need to take the settings from the 
-                  //original material, or create your own new settings, something like:
-                //child.material.needsUpdate = true;
-
-            }
-          })
-
-          model.position.y = -400;
+          console.log("Model Lodaded >>>>>>>>>>>>>>>>>>>");
+          this.scene.add(gltf.scene);
+         
+          gltf.scene.position.y = -365;
+          gltf.scene.scale.x = 120;
+          gltf.scene.scale.y = 120;
+          gltf.scene.scale.z = 120;
+      },
+      ( xhr ) => {
+          // called while loading is progressing
+          console.log( `${( xhr.loaded / xhr.total * 100 )}% loaded` );
+      },
+      ( error ) => {
+          // called when loading has errors
+          console.error( 'An error happened', error );
       });
       const controls = new OrbitControls(this.camera, this.renderer.domElement)
       controls.enableDamping = true;
       controls.dampingFactor = 0.25;
       controls.enableZoom = true;
+      
+      
       
       loader.load('/Models/LifeStrange/Chloe.fbx', (object3d) => {
 
@@ -263,7 +262,6 @@ class SceneManager extends Component{
 
     }
     update = () => {   
-      console.log("aisdjiasd");
       this.deltaTime = this.clock.getDelta();
 
       if (this.pause == true)

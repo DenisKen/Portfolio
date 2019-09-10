@@ -16,7 +16,7 @@
     "react-screen-orientation": "0.0.4",
     "react-scripts": "3.0.1",
     "simple-icons": "^1.13.0",
-    "three": "^0.106.2",
+    "three": "^0.108.0",
     "three-fbx-loader": "^1.0.3",
     "three-fbxloader-offical": "^1.0.0",
     "three-orbitcontrols": "^2.102.2"
