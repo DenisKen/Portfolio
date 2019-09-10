@@ -29,8 +29,6 @@ const project = (props) => {
 }
 
 const playVideo = () => {
-    
-
     console.log("asdasd");
 }   
 export default project;

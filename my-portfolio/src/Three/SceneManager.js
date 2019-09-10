@@ -7,14 +7,20 @@ import * as OrbitControls from 'three-orbitcontrols';
 import { BloomEffect, EffectComposer, EffectPass, RenderPass, BokehEffect } from "postprocessing";
 
 import {MobileView} from 'react-device-detect';
+
 import Joystick from './Controllers/Joystick';
 import HUD_Html from '../HUD/HUD_Html';
+import HUD_ThreeJS from './HUD/HUD_ThreeJS';
+
 import VoicesData from '../VoicesData';
 
 import Sound from './Sounds/Sound_Manager';
 import track_1 from './Sounds/Tracks/SantaMonicaDream.mp3';
 
 import voice_1 from './Sounds/Voices/blah-blah-blah.wav';
+
+
+
 class SceneManager extends Component{
     
     constructor(props){
@@ -50,6 +56,9 @@ class SceneManager extends Component{
       this.voicesSaved = {
         gP_1: voice_1
       }
+
+      this.hud3D = null;
+      
     }
     playAudio = (type, soundPath) => {
 
@@ -111,19 +120,22 @@ class SceneManager extends Component{
         //W
         if (keyCode == 87){
           console.log("W pressed");
-         
+          this.player.translateZ(100 *this.deltaTime);
         }
         //A
         if (keyCode == 65){
           console.log("A pressed");
+          this.player.translateX(-100 *this.deltaTime);
         }
         //S
         if (keyCode == 83){
           console.log("S pressed");
+          this.player.translateZ(-100 *this.deltaTime);
         }
         //D
         if (keyCode == 68){
           console.log("D pressed");
+          this.player.translateX(100 *this.deltaTime);
         }
 
       }, false);
@@ -131,6 +143,9 @@ class SceneManager extends Component{
     componentDidMount() { 
      
 
+
+
+      //>>
       this.clock = new THREE.Clock();
 
       this.scene = new THREE.Scene();
@@ -138,6 +153,7 @@ class SceneManager extends Component{
       
       this.renderer = new THREE.WebGLRenderer();
 
+      
       //SHADER
       this.composer = new EffectComposer(new THREE.WebGLRenderer());
       this.effectPass = new EffectPass(this.camera, new BokehEffect());
@@ -245,9 +261,14 @@ class SceneManager extends Component{
         this.player.position.y = -250;
         this.player.rotation.y = 0.785398;
       });
-
+      
       window.addEventListener( 'resize', this.onWindowResize, false );
 
+      
+
+      //HUD 3D
+      this.hud3D = new HUD_ThreeJS(this.renderer,this.scene);
+      this.hud3D.init();
       
       
       this.update();
@@ -271,7 +292,9 @@ class SceneManager extends Component{
       //this.player.rotation.applyQuaternion( this.camera.quaternion );
       
       this.composer.render(this.deltaTime);
+      
       this.renderer.render( this.scene, this.camera );
+      this.hud3D.render();
 
       //Player
       //Movement
