@@ -12,7 +12,7 @@ import Joystick from './Controllers/Joystick';
 import HUD_Html from '../HUD/HUD_Html';
 import HUD_ThreeJS from './HUD/HUD_ThreeJS';
 
-import VoicesData from '../VoicesData';
+import InteractionData from '../InteractionData';
 
 import Sound from './Sounds/Sound_Manager';
 import track_1 from './Sounds/Tracks/SantaMonicaDream.mp3';
@@ -107,14 +107,14 @@ class SceneManager extends Component{
           //voices.subtitles["graduationPhotos"]["view"]
           //voices.audios["graduationPhotos"]["view"]
           //this.refs.HUDHtml.refs.HUDViewItem.enableViewItem(["photo1", "photo2","photo3"]);
-          this.currentVoiceData = VoicesData["graduationPhotos"]["view"];
-          this.playAudio("voice", this.voicesSaved[VoicesData["graduationPhotos"]["view"][0].audioPath]);
+          this.currentVoiceData = InteractionData["graduationPhotos"]["view"];
+          this.playAudio("voice", this.voicesSaved[InteractionData["graduationPhotos"]["view"][0].audioPath]);
           //Play first audio and set first subtitle
           this.setState({
             subtitle: this.currentVoiceData[0].subtitle
-          })
+          });
 
-          this.refs.HUDHtml.refs.HUDViewItem.enableViewItem(["photo1", "photo2","photo3"]);
+          this.refs.HUDHtml.refs.HUDViewItem.enableViewItem( InteractionData.getImages("pc"));
         }
         
         //W
@@ -339,7 +339,7 @@ class SceneManager extends Component{
         //Change subtitle here
         this.setAudioAndSubtitle(0, this.currentVoiceData[index].subtitle);
         //Play Sound here if have
-        this.playAudio("voice", this.voicesSaved[VoicesData["graduationPhotos"]["view"][index].audioPath]);
+        this.playAudio("voice", this.voicesSaved[InteractionData["graduationPhotos"]["view"][index].audioPath]);
         
       }
       callBackViewItem_Close = () =>{

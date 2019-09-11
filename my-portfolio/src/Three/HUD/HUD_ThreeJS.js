@@ -12,15 +12,30 @@ class HUD_ThreeJS{
     //Init all sprites objects
     init = ()=>{
 
-        var spriteMap = new THREE.TextureLoader().load(mouseSelector);
-        var spriteMaterial = new THREE.SpriteMaterial( { map: spriteMap} );
-        spriteMaterial.transparent = true;
-        var sprite = new THREE.Sprite( spriteMaterial );
-        sprite.scale.x = 50;
-        sprite.scale.y = 50;
-        sprite.scale.z = 50;
-        sprite.position.z = -200;
-        this.scene.add( sprite );
+        //Composto por
+        //Sprite seta
+        //Sprite nome objeto
+        //---When in ranged of choice
+        //Sprite Background Choice
+        //Sprite Options (View, Get, etc)
+
+        var textureLoader = THREE.TextureLoader();
+        textureLoader.load(mouseSelector, (textureLoader) =>{
+            var spriteMain_Material = new THREE.SpriteMaterial( { map: textureLoader} );
+            spriteMain_Material.transparent = true;
+            var spriteMain = new THREE.Sprite( spriteMain_Material );
+            spriteMain.scale.x = 50;
+            spriteMain.scale.y = 50;
+            spriteMain.scale.z = 50;
+            spriteMain.position.z = -200;
+            this.scene.add( spriteMain );
+        });
+        
+    }
+
+    loadSprite = (sprite) =>{
+        
+
     }
     //cria variaveis
     
