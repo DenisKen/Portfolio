@@ -107,8 +107,8 @@ class SceneManager extends Component{
           //voices.subtitles["graduationPhotos"]["view"]
           //voices.audios["graduationPhotos"]["view"]
           //this.refs.HUDHtml.refs.HUDViewItem.enableViewItem(["photo1", "photo2","photo3"]);
-          this.currentVoiceData = InteractionData["graduationPhotos"]["view"];
-          this.playAudio("voice", this.voicesSaved[InteractionData["graduationPhotos"]["view"][0].audioPath]);
+          this.currentVoiceData = InteractionData.interactionHUD["graduationPhotos"]["view"];
+          this.playAudio("voice", this.voicesSaved[InteractionData.interactionHUD["graduationPhotos"]["view"][0].audioPath]);
           //Play first audio and set first subtitle
           this.setState({
             subtitle: this.currentVoiceData[0].subtitle
@@ -339,7 +339,7 @@ class SceneManager extends Component{
         //Change subtitle here
         this.setAudioAndSubtitle(0, this.currentVoiceData[index].subtitle);
         //Play Sound here if have
-        this.playAudio("voice", this.voicesSaved[InteractionData["graduationPhotos"]["view"][index].audioPath]);
+        this.playAudio("voice", this.voicesSaved[InteractionData.interactionHUD["graduationPhotos"]["view"][index].audioPath]);
         
       }
       callBackViewItem_Close = () =>{
