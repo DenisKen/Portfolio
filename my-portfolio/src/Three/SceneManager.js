@@ -267,7 +267,7 @@ class SceneManager extends Component{
       
 
       //HUD 3D
-      this.hud3D = new HUD_ThreeJS(this.renderer,this.scene);
+      this.hud3D = new HUD_ThreeJS(this.scene);
       this.hud3D.init();
       
       

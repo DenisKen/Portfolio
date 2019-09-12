@@ -3,18 +3,22 @@ import InteractionData from '../../InteractionData';
 
 import mouseSelector from '../HUD/mouseSelector.png';
 import interactionData from '../../InteractionData';
+
+import InteractionOption from './InteractionOption';
 class HUD_ThreeJS{
 
-    constructor(renderer,scene){        
-        this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );;
+    constructor(scene){        
+    
         this.scene = scene;
-        this.renderer = renderer;
 
     }
     
     //Init all sprites objects
     init = ()=>{
 
+
+        var interactionOption = new InteractionOption();
+        interactionOption.create(this.scene);
         //Composto por
         //Sprite seta
         //Sprite nome objeto
