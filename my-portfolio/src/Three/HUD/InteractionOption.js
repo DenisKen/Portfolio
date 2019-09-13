@@ -67,22 +67,19 @@ class InteractionOption {
                 this.spriteMain.add(this.spriteOption);
 
                 this.spriteOption.visible = true;
-            });
+                console.log("11111");
 
-            console.log(interactionData.interactionHUD);
+            });
+            console.log("22222");
             for (let i = 0; i < interactionData.getAllItems().length; i++) {
                 let name = interactionData.getAllItems()[i];
-                console.log(interactionData.interactionHUD[name]);
                 let tempImage = null;
                 //Verify view
                 if (interactionData.interactionHUD[name]["view"]){
-                    console.log("Create View");
                 }
                 if (interactionData.interactionHUD[name]["lookAt"]){
-                    console.log("Create Look");
                 }
                 if (interactionData.interactionHUD[name]["animation"]){
-                    console.log("Create Animation");
                 }
             }
         });
