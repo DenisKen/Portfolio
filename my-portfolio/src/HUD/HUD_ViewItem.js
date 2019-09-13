@@ -46,7 +46,7 @@ class HUD_ViewItem extends Component {
         for (let i = 0; i < images.length; i++) {
             this.imagesToShow.push(this.images[images[i]]);
         }
-             //Set first image and show it.
+        //Set first image and show it.
         this.setState ({
             mainImage: this.imagesToShow[0],
             pointerEvents: 'all',
