@@ -7,18 +7,24 @@ import interactionData from '../../InteractionData';
 import InteractionOption from './InteractionOption';
 class HUD_ThreeJS{
 
-    constructor(scene){        
-    
-        this.scene = scene;
+    constructor(scene, camera){        
 
+        this.interactionOptionsArray = [];
+        this.scene = scene;
+        this.camera = camera;
     }
     
     //Init all sprites objects
     init = ()=>{
 
+        for (let i = 0; i < 1; i++) {
+            let objectName = interactionData.getAllItems()[i];
+            var tempInteractionOption = new InteractionOption();
+            tempInteractionOption.create(this.scene, objectName);
 
-        var interactionOption = new InteractionOption();
-        interactionOption.create(this.scene);
+            this.interactionOptionsArray[i] = tempInteractionOption;
+        }
+        
         //Composto por
         //Sprite seta
         //Sprite nome objeto
@@ -35,7 +41,8 @@ class HUD_ThreeJS{
     }
     //cria variaveis
     
-    render = () =>{
+    update = () => {
+
         //this.renderer.render(this.scene, this.camera);
     }
 }

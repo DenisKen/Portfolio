@@ -1,8 +1,14 @@
 import * as THREE from 'three';
 import interactionData from '../../InteractionData';
 
-import mouseSelector from '../HUD/mouseSelector.png';
+import arrow from '../HUD/Images/arrow.png';
+import name from '../HUD/Images/name.png';
+import click from '../HUD/Images/click.png';
+import touch from '../HUD/Images/touch.png';
 
+import anim from '../HUD/Images/anim.png';
+import look from '../HUD/Images/look.png';
+import view from '../HUD/Images/view.png';
 class InteractionOption {
     
     constructor(){
@@ -21,29 +27,28 @@ class InteractionOption {
         
     }
 
-    create = (scene) =>{
+    
+    create = (scene, objectName) =>{
 
         this.scene = scene;
         
         //CREATE ARROW
-        this.textureLoader.load(mouseSelector, (textureLoader) =>{
+        this.textureLoader.load(arrow, (textureLoader) =>{
             var spriteMaterial = new THREE.SpriteMaterial( { map: textureLoader} );
             spriteMaterial.transparent = true;
             this.spriteMain = new THREE.Sprite( spriteMaterial );
-            this.spriteMain.scale.x = 50;
-            this.spriteMain.scale.y = 50;
-            this.spriteMain.scale.z = 50;
+            this.spriteMain.scale.set(50,50,50);
             this.spriteMain.position.z = -200;
             this.scene.add(this.spriteMain );
 
-            this.textureLoader.load(mouseSelector, (textureLoader) =>{
+        
+
+            //NAME
+            this.textureLoader.load(name, (textureLoader) =>{
                 var spriteMaterial = new THREE.SpriteMaterial( { map: textureLoader} );
                 spriteMaterial.transparent = true;
                 this.spriteName = new THREE.Sprite( spriteMaterial );
-                this.spriteName.scale.x = 1;
-                this.spriteName.scale.y = 1;
-                this.spriteName.scale.z = 1;
-                this.spriteName.position.y = 1;
+                this.spriteName.position.y = 0.5;
                 this.spriteName.position.z = 0;
                 window.spriteteste = this.spriteName;
                 this.scene.add( this.spriteName );
@@ -52,39 +57,81 @@ class InteractionOption {
 
             //ACTIVE    WHEN YOU ARE NEARLY OF OBJCTEC 
             //Made Options
-            this.textureLoader.load(mouseSelector, (textureLoader) =>{
+            this.textureLoader.load(touch, (textureLoader) =>{
                 var spriteMaterial = new THREE.SpriteMaterial( { map: textureLoader} );
                 spriteMaterial.transparent = true;
                 this.spriteOption = new THREE.Sprite( spriteMaterial );
-                this.spriteOption.scale.x = 0.4;
-                this.spriteOption.scale.y = 0.4;
-                this.spriteOption.scale.z = 0.4;
-                this.spriteOption.position.y = 1;
+                this.spriteOption.scale.set(0.4,0.4,0.4);
+                this.spriteOption.position.y = 0;
                 this.spriteOption.position.z = 0;
                     
 
                 this.scene.add( this.spriteOption );
-                this.spriteMain.add(this.spriteOption);
+                this.spriteName.add(this.spriteOption);
 
                 this.spriteOption.visible = true;
-                console.log("11111");
 
             });
-            console.log("22222");
-            for (let i = 0; i < interactionData.getAllItems().length; i++) {
-                let name = interactionData.getAllItems()[i];
-                let tempImage = null;
                 //Verify view
-                if (interactionData.interactionHUD[name]["view"]){
-                }
-                if (interactionData.interactionHUD[name]["lookAt"]){
-                }
-                if (interactionData.interactionHUD[name]["animation"]){
-                }
+            if (interactionData.interactionHUD[objectName]["view"]){
+                this.textureLoader.load(view, (textureLoader) =>{
+                    var spriteMaterial = new THREE.SpriteMaterial( { map: textureLoader} );
+                    spriteMaterial.transparent = true;
+                    var tempSprite = new THREE.Sprite( spriteMaterial );
+                    tempSprite.scale.set(1.6,1.6,1.6);
+                    tempSprite.position.y = 2;
+                    tempSprite.position.z = 0;
+                        
+    
+                    this.scene.add( tempSprite );
+                    this.spriteOption.add(tempSprite);    
+                });
+            }
+            if (interactionData.interactionHUD[objectName]["lookAt"]){
+                this.textureLoader.load(look, (textureLoader) =>{
+                    var spriteMaterial = new THREE.SpriteMaterial( { map: textureLoader} );
+                    spriteMaterial.transparent = true;
+                    var tempSprite = new THREE.Sprite( spriteMaterial );
+
+                    tempSprite.scale.set(1.6,1.6,1.6);
+                    tempSprite.position.y = 0;
+                    tempSprite.position.x = 2;
+                    tempSprite.position.z = 0;
+                        
+    
+                    this.scene.add( tempSprite );
+                    this.spriteOption.add(tempSprite);    
+                });
+            }
+            if (interactionData.interactionHUD[objectName]["animation"]){
+
+                this.textureLoader.load(anim, (textureLoader) =>{
+                    var spriteMaterial = new THREE.SpriteMaterial( { map: textureLoader} );
+                    spriteMaterial.transparent = true;
+                    var tempSprite = new THREE.Sprite( spriteMaterial );
+                    tempSprite.scale.set(1.6,1.6,1.6);
+                    tempSprite.position.y = 0;
+                    tempSprite.position.x = -2;
+                    tempSprite.position.z = 0;
+                        
+    
+                    this.scene.add( tempSprite );
+                    this.spriteOption.add(tempSprite);    
+                });
             }
         });
     }
     
+    getInteractionOption = () =>{
+        return this.spriteMain;
+    }
+
+    activate = () =>{
+        
+    }
+    desaticvate = () =>{
+        
+    }
 }
 
 export default InteractionOption;

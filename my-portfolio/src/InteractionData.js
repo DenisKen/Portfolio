@@ -14,7 +14,9 @@ const interactionData = {
             audioPath: "gradP_view_3",
             image: "gradP_view_4"
           }
-        ]
+        ],
+        lookAt :[],
+        animation:[]
       },   
       chessChampionship:{
         lookAt:[

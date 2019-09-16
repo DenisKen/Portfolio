@@ -205,8 +205,16 @@ class SceneManager extends Component{
       var room;
 
       let gltfLoader = new GLTFLoader();
-      gltfLoader.load('/Models/Room/Sketchfabroomtest.gltf', (gltf ) => {
-        
+      gltfLoader.load('/Models/Room/Sketchfabroomtest.gltf', (gltf) => {
+          
+          gltf.scene.traverse( ( child ) => {
+            window.traverse = child;
+            //console.log(child.name);
+            if (child.name == "Cube021"){
+              console.log(child.position);
+            }
+          })
+          
           console.log("Model Lodaded >>>>>>>>>>>>>>>>>>>");
           this.scene.add(gltf.scene);
          
@@ -267,7 +275,7 @@ class SceneManager extends Component{
       
 
       //HUD 3D
-      this.hud3D = new HUD_ThreeJS(this.scene);
+      this.hud3D = new HUD_ThreeJS(this.scene, this.camera);
       this.hud3D.init();
       
       
@@ -291,10 +299,11 @@ class SceneManager extends Component{
       //this.player.position.add( vector );
       //this.player.rotation.applyQuaternion( this.camera.quaternion );
       
-      this.composer.render(this.deltaTime);
+      this.hud3D.update();
+
+
       
-      this.renderer.render( this.scene, this.camera );
-      this.hud3D.render();
+      
 
       //Player
       //Movement
@@ -302,8 +311,9 @@ class SceneManager extends Component{
         if (this.direction.x == "right")
           this.player.position.x += 1;
       }
-      
-      //Shader camera
+
+      this.composer.render(this.deltaTime);
+      this.renderer.render( this.scene, this.camera );
       
       requestAnimationFrame( this.update ); 
         
