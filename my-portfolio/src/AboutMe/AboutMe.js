@@ -17,7 +17,7 @@ const aboutMe = (props) => {
         <div className="AboutMe-Content Global-Background">
             <div className="Global-Content AboutMe-SubContent">
                 <div>
-                    <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
+                    <ScrollAnimation animateIn="fadeInDown" animateOnce={true} offset={0}>
                         <p className="AboutMe-Title Global-Title">Denis Ken. Prazer.</p>
                     </ScrollAnimation>
                     <div >

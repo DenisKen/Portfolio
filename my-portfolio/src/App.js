@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
           { /* <Joystick joystickMovement={this.joystickMovement} onEnd={this.joystick_EndMovement} ref="joystick"/> */}
-          <SceneManager ref="sceneManager"/>
+          {/*<SceneManager ref="sceneManager"/>*/}
           <AboutMe/>
           <MySkills/>
           <MyProjects/>
