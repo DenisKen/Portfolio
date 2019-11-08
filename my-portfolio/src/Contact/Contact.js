@@ -15,7 +15,7 @@ const contact = () => {
                     <p> <a href="https://www.github.com/DenisKen"> github.com/denisKen</a></p>
                 </div>
                 <div className="Contact-Description--Rights">
-                    <p> Todos os direitos reservados por Denis Ken ® </p>
+                    <p> Site created by Denis Ken. </p>
                 </div>
             </div>
         </div>

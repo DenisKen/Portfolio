@@ -4,12 +4,12 @@ import './MyProjects.css';
 import Project from './Project';
 
 import imageProject_1 from './Images/Project_Tiki.jpeg'; 
-import imageProject_2 from './Images/Project_Tiki.jpeg'; 
+import imageProject_2 from './Images/Project_OWI.jpeg'; 
 import imageProject_3 from './Images/Project_Lipsync.jpeg'; 
 import imageProject_4 from './Images/Project_Conarec.jpeg'; 
 
 import videoProject_1 from './Videos/Project_Tiki.mp4';
-import videoProject_2 from './Videos/Project_Tiki.mp4';
+import videoProject_2 from './Videos/Project_OWI.mp4';
 import videoProject_3 from './Videos/Project_Lipsync.mp4';
 import videoProject_4 from './Videos/Project_Conarec.mp4';
 
@@ -47,7 +47,7 @@ const myProjects = (props) => {
                     image={images.imageProject_2}
                     video={videos.videoProject_2}
                     className={""}
-                    alt="videobot"
+                    alt="videoBot"
                     subtitle="Video Bot"
                 />
                 <Project  

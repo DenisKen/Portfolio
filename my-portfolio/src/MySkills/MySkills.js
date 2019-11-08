@@ -23,10 +23,11 @@ const mySkills = () => {
                 <div className="MySkills-SubContent"> 
                     <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
                         <div className="MySkills-Description Global-Text-Description">
-                            <p> Atuei em diversos projetos com diferentes necessidades. </p>
+                            <p> I worked in several projects with different needs. </p>
                             <br></br>
-                            <p> A busca pelo novo sempre foi forte. De desenvolvedor em jogos, me aprofundei em desenvolvimento web por curiosidade e em aplicativos feitos em React-Native</p>
+                            <p> I'm a person that loves to discover new things. I always searching for new tecnologies or tools that can improve my projects or the way that I work.</p>
                             <br></br>
+                            <p> Javascript, React, HTML and CSS. I learned by myself at my work when I faced a hardware limitation using Unity. I have no fear to leave the comfort zone, instead, I like it. </p>
                         </div>
                     </ScrollAnimation>
                     <div className="MySkills-Skills">

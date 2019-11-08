@@ -23,11 +23,11 @@ const aboutMe = (props) => {
                     <div >
                         <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>    
                         <div className="AboutMe-Description Global-Text-Description">
-                            <p> 22 anos. Desenvolvedor Full-StackOverFlow e nas horas vagas crio robôs como a Ali.</p>
+                            <p> I'm a Full-StackOverFlow developer :) </p>
                             <br></br>
-                            <p> Numa época em que tudo é automatizado, nada melhor do que automatizar seu próprio portifólio.</p>
+                            <p> My site is still developing. I'm creating a game like Life Strange, but to run on mobile browsers... Will be awesome. Wait for it.</p>
                             <br></br>
-                            <p> Sou formado pelo Senac em Jogos Digitais e por curiosidade, estudei desenvolvimento web sozinho</p>  
+                            <p> I'm graduated by Senac in Game Developer and I learnd Front-end by myself </p>  
                         </div>
                         </ScrollAnimation>
                     </div>
