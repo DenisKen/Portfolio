@@ -95,3 +95,15 @@
         justify-content: center;
     }
 }
+
+@media only screen and (max-width: 500px){
+    .MySkills-Title{   
+        width: 400px;
+    }
+    .MySkills-Description{   
+        width: 400px;
+    }
+    .MySkills-Skills{
+        width: 100%;
+    }
+}

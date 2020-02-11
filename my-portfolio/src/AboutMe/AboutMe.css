@@ -41,6 +41,10 @@
     display: flex;
     justify-content: left;
 }
+.AboutMe-ImageShrink{
+    flex-shrink: 1;
+    flex: 1 1;
+}
 @media only screen and (max-width: 1160px){
     .AboutMe-Title{
         text-align: center;
@@ -49,7 +53,7 @@
         justify-content: center;
         flex-flow: row wrap;
     }
-    .AboutMe-Description{
+    .AboutMe-Description{   
         text-align: center;
     }
     
@@ -61,7 +65,14 @@
     }
 }
 
-.AboutMe-ImageShrink{
-    flex-shrink: 1;
-    flex: 1 1;
+@media only screen and (max-width: 500px){
+    .AboutMe-Title{
+        width: 400px;
+    }
+    .AboutMe-Description{   
+        width: 400px;
+    }
+    .AboutMe-Image{
+        width: 100%;
+    }
 }

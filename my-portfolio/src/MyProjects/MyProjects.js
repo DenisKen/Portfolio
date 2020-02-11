@@ -42,20 +42,29 @@ const myProjects = (props) => {
                     className={"Project-Content-First"}
                     alt="tiki"
                     subtitle="TIKI"
+                    textDescription="TIKI is a WebGL game where you control the nature
+                    of the islands, using your powers to save it."
+                    madeBy="Unity 3D"
                 />
                 <Project  
                     image={images.imageProject_2}
                     video={videos.videoProject_2}
-                    className={""}
+                    className={"Project-Content-Last"}
                     alt="videoBot"
                     subtitle="Video Bot"
+                    textDescription="Video BOT is a web application that solves all types
+                    of problems. Help you understand bills, doubts, etc."
+                    madeBy="Construct 2. Three JS. Javascript"
                 />
                 <Project  
                     image={images.imageProject_3}
                     video={videos.videoProject_3}
                     className={""}
                     alt="lipsync"
-                    subtitle="Software LipSync"
+                    subtitle="Lisy - Software LipSync"
+                    textDescription="Lisy is a software powerful of phoneme alignment. 
+                    The Software transform text and audio in a perfect lip syncing"
+                    madeBy="Pure Javascript"
                 />
                 <Project  
                     image={images.imageProject_4}
@@ -63,6 +72,9 @@ const myProjects = (props) => {
                     className={"Project-Content-Last"}
                     alt="conarecVR"
                     subtitle="Conarec VR"
+                    textDescription="It's a Virtual Reality application. You can see ours virtual
+                    agents in real size and talk to them."
+                    madeBy="Unity 3D and Google Dream"
                 />
                 </div>
                 

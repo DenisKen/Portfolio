@@ -7,6 +7,7 @@ import './Project.css'
 
 const project = (props) => {
     
+
     const video = (
         <video className="Project-Video" loop autoPlay>
             <source src={props.video} type="video/mp4"/>
@@ -23,6 +24,13 @@ const project = (props) => {
                     </div>        
                 </div> 
                 <div className="Project-Picture--TextLabel"> {props.subtitle} </div>
+                {
+                    <div className="Project-Picture--TextDescription">
+                        <p>{props.textDescription}</p>
+                        <br></br>
+                        <p>Made with <strong>{props.madeBy}</strong></p>
+                    </div>
+                }
             </ScrollAnimation>
         </div>
     )

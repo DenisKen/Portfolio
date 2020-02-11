@@ -18,16 +18,15 @@ const aboutMe = (props) => {
             <div className="Global-Content AboutMe-SubContent">
                 <div>
                     <ScrollAnimation animateIn="fadeInDown" animateOnce={true} offset={0}>
-                        <p className="AboutMe-Title Global-Title">Denis Ken. Prazer.</p>
+                        <p className="AboutMe-Title Global-Title">Denis Ken. Hello!</p>
                     </ScrollAnimation>
                     <div >
                         <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>    
                         <div className="AboutMe-Description Global-Text-Description">
-                            <p> I'm a Full-StackOverFlow developer :) </p>
+                            <p> I'm a Full-StackOverFlow developer</p>
                             <br></br>
-                            <p> My site is still developing. I'm creating a game like Life Strange, but to run on mobile browsers... Will be awesome. Wait for it.</p>
-                            <br></br>
-                            <p> I'm graduated by Senac in Game Developer and I learnd Front-end by myself </p>  
+                            {/*<p> My site is still developing. I'm creating a game like Life Strange, but to run on mobile browsers... Will be awesome. Wait for it.</p>*/}
+                            <p> I'm graduated from Senac in Game Developer and I learned Front-end by myself </p>   
                         </div>
                         </ScrollAnimation>
                     </div>
