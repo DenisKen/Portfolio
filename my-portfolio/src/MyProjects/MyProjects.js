@@ -30,7 +30,7 @@ const videos = {
 
 const myProjects = (props) => {
 
-
+ 
     return(
         <div className="Global-Background MyProjects-Content">
             <div className="Global-Content">
