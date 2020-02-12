@@ -27,8 +27,7 @@
 }
 .AboutMe-Image{
     position: absolute;
-    height: 310px;
-    width: 540px;
+    width: 393px;
 
     clip-path: polygon(4% 0, 100% 0%, 100% 100%, 0 100%);
 
