@@ -1,57 +1,21 @@
 {
-  "name": "my-portfolio",
+  "name": "personalportfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "animate.css": "^3.7.2",
-    "animejs": "^3.1.0",
-    "nipplejs": "^0.8.3",
-    "normalize.css": "^8.0.1",
-    "postprocessing": "^6.7.0",
-    "react": "^16.8.6",
-    "react-animate-on-scroll": "^2.1.5",
-    "react-device-detect": "^1.7.5",
-    "react-dom": "^16.8.6",
-    "react-image-gallery": "^1.0.6",
-    "react-nipple": "^1.0.1",
-    "react-screen-orientation": "0.0.4",
-    "react-scripts": "^3.3.1",
-    "simple-icons": "^1.13.0",
-    "three": "^0.108.0",
-    "three-fbx-loader": "^1.0.3",
-    "three-fbxloader-offical": "^1.0.0",
-    "three-orbitcontrols": "^2.102.2"
+    "@brainhubeu/react-carousel": "^1.12.3",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.2.1",
+    "react": "^16.2.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.2.0",
+    "react-ga": "^2.7.0",
+    "react-scripts": "1.0.17"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DenisKen/portfolio.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DenisKen/portfolio/issues"
   }
 }

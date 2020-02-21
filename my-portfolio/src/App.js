@@ -1,42 +1,60 @@
-import React,{Component} from 'react';
-
-import 'normalize.css';
+import React, { Component } from 'react';
+import ReactGA from 'react-ga';
 import './App.css';
-
-import Joystick from './Three/Controllers/Joystick';
-import SceneManager from './Three/SceneManager';
-import AboutMe from './AboutMe/AboutMe';
-import MyProjects from './MyProjects/MyProjects';
-import MySkills from './MySkills/MySkills';
-import Contact from './Contact/Contact';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import About from './Components/About';
+import Resume from './Components/Resume';
+import Contact from './Components/Contact';
+import Testimonials from './Components/Testimonials';
+import Portfolio from './Components/Portfolio';
 
 class App extends Component {
 
-  render(){
-    return (
-      <div className="App">
-          { /* <Joystick joystickMovement={this.joystickMovement} onEnd={this.joystick_EndMovement} ref="joystick"/> */}
-          {/*<SceneManager ref="sceneManager"/>*/}
-          <AboutMe/>
-          <MySkills/>
-          <MyProjects/>
-          <Contact/>
-      </div>
-    );
+  constructor(props){
+    super(props);
+    this.state = {
+      foo: 'bar',
+      resumeData: {
+      }
+    };
+
+    //ReactGA.initialize('UA-110570651-1');
+    //ReactGA.pageview(window.location.pathname);
+
+  }
+
+  getResumeData(){
+    /*
+    $.ajax({
+      url:'/resumeData.json',
+      dataType:'json',
+      cache: false,
+      success: function(data){
+        this.setState({resumeData: data});
+      }.bind(this),
+      error: function(xhr, status, err){
+        console.log(err);
+        alert(err);
+      }
+    });
+    */
   }
 
   componentDidMount(){
-    //this.refs.joystick.test(this.refs.sceneManager);
+    this.getResumeData();
   }
 
-  joystickMovement = (movement) =>{
-      console.log("Movement ",movement);
-      var x = 1;
-      console.log(this.hud_Html.props.test = 1);
-  }
-  
-  joystick_EndMovement(data){
-    console.log("Data ", data);
+  render() {
+    return (
+      <div className="App">
+        <Header data={this.state.resumeData.x}/>
+        <About data={this.state.resumeData.x}/>
+        <Resume data={this.state.resumeData.resume}/>
+        <Portfolio data={this.state.resumeData.portfolio}/>
+        <Footer data={this.state.resumeData.x}/>
+      </div>
+    );
   }
 }
 
