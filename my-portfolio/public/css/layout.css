@@ -419,11 +419,25 @@ ul#nav li.current a { color: #F06000; }
 .portfolio-carousel{
    position: relative;
 }
+
+.portfolio-carousel-arrows{
+      top: 0px;
+      height: 93%;
+      width: 32px;
+}
 .portfolio-carousel button{
    position: absolute;
-   z-index: 1;
+   z-index: 2;
+   background-color: transparent;
 }
-.portfolio-carousel-button-rigth{
+.portfolio-carousel button:hover{
+  
+   background-color: transparent;
+}
+.portfolio-carousel-arrows button{
+      background-color: #525252;
+}
+.portfolio-carousel-arrow-right{
    right: 0;
 }
 .portfolio-carousel-block{
