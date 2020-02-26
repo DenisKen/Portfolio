@@ -419,23 +419,30 @@ ul#nav li.current a { color: #F06000; }
 .portfolio-carousel{
    position: relative;
 }
-
+.porftolio-video{
+   position: relative;
+}
+.porftolio-video-button{
+   position: absolute !important;
+   top: 50% !important;
+   left: 50% !important;
+   background-color: green !important;
+   height: 50px !important;
+   width: 50px !important;
+   
+}
 .portfolio-carousel-arrows{
       top: 0px;
       height: 93%;
       width: 32px;
 }
-.portfolio-carousel button{
-   position: absolute;
-   z-index: 2;
-   background-color: transparent;
+.portfolio-carousel-arrows{
+   position: absolute  !important;
+   z-index: 2  !important;
+   background-color: transparent  !important;
 }
-.portfolio-carousel button:hover{
-  
+.portfolio-carousel-arrows hover{
    background-color: transparent;
-}
-.portfolio-carousel-arrows button{
-      background-color: #525252;
 }
 .portfolio-carousel-arrow-right{
    right: 0;

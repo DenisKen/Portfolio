@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { Player, BigPlayButton } from 'video-react';
+
 
 class Portfolio extends Component {
   
@@ -60,14 +60,19 @@ class Portfolio extends Component {
                     arrowRight={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowRight portfolio-carousel-arrows portfolio-carousel-arrow-right"><span>next</span></button>}
                     addArrowClickHandler
                     >
-                    <img src={"images/portfolio/teste.png"} />
+                      
+                     
+                    <video className="porftolio-video" src={"videos/Project_Tiki.mp4"}>
+                    <button className="porftolio-video-button">Play</button>
+                    </video>
+                    
                     <img src={"images/portfolio/teste2.png"} />
                     <img src={"images/portfolio/teste3.png"} />
                   </Carousel>
                 </div>
                 
                 <div className="portfolio-item-meta">
-                <h5>LISY - A LIPSYNC SOFTWARE</h5>
+                  <h5>LISY - A LIPSYNC SOFTWARE</h5>
                   <p>EASESAAS</p>
 
                   <Carousel
@@ -85,8 +90,47 @@ class Portfolio extends Component {
                     <img src={"images/portfolio/teste3.png"} />
                   </Carousel>
                 </div>
-              </div>
-              
+
+                <div className="portfolio-item-meta">
+                  <h5>VÍDEO BOT</h5>
+                  <p>EASESAAS</p>
+
+                  <Carousel
+                    className={"portfolio-carousel"}
+                    centered
+                    clickToChange
+                    infinite
+                    slidesPerPage={this.state.slidePerPage}
+                    arrowLeft={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowLeft portfolio-carousel-arrows"><span>next</span></button>}
+                    arrowRight={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowRight portfolio-carousel-arrows portfolio-carousel-arrow-right"><span>next</span></button>}
+                    addArrowClickHandler
+                    >
+                    <img src={"images/portfolio/teste.png"} />
+                    <img src={"images/portfolio/teste2.png"} />
+                    <img src={"images/portfolio/teste3.png"} />
+                  </Carousel>
+                </div>
+
+                <div className="portfolio-item-meta">
+                  <h5>CONAREC - VR GOOGLE DREAM</h5>
+                  <p>EASESAAS</p>
+
+                  <Carousel
+                    className={"portfolio-carousel"}
+                    centered
+                    clickToChange
+                    infinite
+                    slidesPerPage={this.state.slidePerPage}
+                    arrowLeft={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowLeft portfolio-carousel-arrows"><span>next</span></button>}
+                    arrowRight={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowRight portfolio-carousel-arrows portfolio-carousel-arrow-right"><span>next</span></button>}
+                    addArrowClickHandler
+                    >
+                    <img src={"images/portfolio/teste.png"} />
+                    <img src={"images/portfolio/teste2.png"} />
+                    <img src={"images/portfolio/teste3.png"} />
+                  </Carousel>
+                </div>
+              </div>     
               
             </div>
         </div>
