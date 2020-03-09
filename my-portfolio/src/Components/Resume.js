@@ -27,15 +27,35 @@ class Resume extends Component {
 
       <div className="row education">
          <div className="three columns header-col">
-            <h1><span>Education</span></h1>
+            <h1><span>Educação</span></h1>
          </div>
 
          <div className="nine columns main-col">
             <div className="row item">
                <div className="twelve columns">
                   <h3>Senac Campus Santo Amaro</h3>
+                  <p className="info">Técnico em Jogos Digitais<span>&bull;</span><em className="date"> 2013</em></p>
+                  <p> 
+                     Esse curso abriu todas as portas que tenho hoje. Quando eu tinha 16, eu não estava conseguindo passar em nenhuma 
+                     prova dos cursos técnicos da região. E nesse curso, a inscrição era por ordem de chegada e renda. Foi aí que consegui
+                     minha primeira oportunidade.
+                     <br/>
+                     Aprendi sobre o mundo da programação. Fui um dos melhores alunos. E logo depois de terminar o curso, comecei minha faculdade.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div className="nine columns main-col">
+            <div className="row item">
+               <div className="twelve columns">
+                  <h3>Senac Campus Santo Amaro</h3>
                   <p className="info">Graduação em Jogos Digitais<span>&bull;</span><em className="date"> 2016</em></p>
-                  <p>Eu fiz lá </p>
+                  <p>
+                     Na faculdade, tive um reforço do que aprendi no técnico. Por causa do técnico eu já estava bem mais
+                     avançado do que o pessoal da minha sala.
+                     <br/>
+                     Eu desenvolvi alguns mini jogos durante os tempos livres da faculdade, o que me deu uma boa noção de programação.
+                  </p>
                </div>
             </div>
          </div>
@@ -45,16 +65,23 @@ class Resume extends Component {
       <div className="row work">
 
          <div className="three columns header-col">
-            <h1><span>Work</span></h1>
+            <h1><span>Trabalho</span></h1>
          </div>
 
          <div className="nine columns main-col">
-            <h3>Senac Campus Santo Amaro</h3>
-            <p className="info">Graduação em Jogos Digitais<span>&bull;</span><em className="date"> 2016</em></p>
-            <p>Eu fiz lá </p>
-            <h3>MIT - Microsoft </h3>
-            <p className="info">Graduação em Jogos Digitais<span>&bull;</span><em className="date"> 2016</em></p>
-            <p>Eu fiz lá </p>
+            <h3>CIT - Senac</h3>
+            <p className="info">Game Developer<span>&bull;</span><em className="date">Mai 2016 - Nov 2016</em></p>
+            <p>Após ter feito um projeto de iniciação científica e ter um artigo publicado, consegui uma indicação para o CIT Senac. 
+               Onde eu programei todo o jogo, participei das reuniões com o cliente, definição e implementação do jogo TIKI.
+            </p>
+            <h3>OLOS - Tecnologia e Sistemas</h3>
+            <p className="info">Developer<span>&bull;</span><em className="date">Nov 2016 - Até agora</em>  </p>
+            <p>Recebi a proposta de emprego via Linkedin de um dos donos da empresa. Entrei na empresa
+               para produzir aplicações inovadoras. 
+               <br/>
+               Desenvolvi aplicações usando Javascript e Unity. Um dos meus projetos criados, conseguiu o 1° lugar no evento
+               Inove Olos, ganhando o prêmio de R$ 70 mil.
+            </p>
         </div>
     </div>
 
@@ -63,13 +90,14 @@ class Resume extends Component {
       <div className="row skill">
 
          <div className="three columns header-col">
-            <h1><span>Skills</span></h1>
+            <h1><span>Habilidades</span></h1>
          </div>
 
          <div className="nine columns main-col">
 
             <p>
-            Here you can create a short write-up of your skills to show off to employers
+            Pra mim, um dia sem aprender nada, é um dia perdido. Estou sempre procurando coisas novas e desafiadoras para fazer. 
+            Javascript e threeJS foram algumas linguagens que aprendi sozinho.
             </p>
 
 				<div className="bars">

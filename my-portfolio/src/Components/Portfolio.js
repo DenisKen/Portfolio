@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-import { Player, BigPlayButton } from 'video-react';
 
 
 class Portfolio extends Component {
@@ -42,12 +41,14 @@ class Portfolio extends Component {
 
           <div className="twelve columns collapsed">
 
-              <h1>Check Out Some of My Works.</h1>
+              <h1>VEJA ALGUNS DOS MEUS TRABALHOS.</h1>
 
               <div className="overlay">
                 <div className="portfolio-item-meta">
                 <h5>TIKI</h5>
-                  <p>TIKI was a webGL game developed in Unity 3D. </p>
+                  <p>TIKI Game foi meu primeiro jogo desenvolvido em UNITY 3D. A parte mais divertida de
+                    desenvolve-lo foi criar a comunicação dos cubos. Cada cubo se comunica com os adjacentes, usando recursividade.  
+                  </p>
                   {this.state.width > 932 ? null : null}
                   <Carousel
                     className={"portfolio-carousel"}
@@ -60,20 +61,21 @@ class Portfolio extends Component {
                     arrowRight={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowRight portfolio-carousel-arrows portfolio-carousel-arrow-right"><span>next</span></button>}
                     addArrowClickHandler
                     >
-                      
-                     
-                    <video className="porftolio-video" src={"videos/Project_Tiki.mp4"}>
-                    <button className="porftolio-video-button">Play</button>
-                    </video>
                     
-                    <img src={"images/portfolio/teste2.png"} />
-                    <img src={"images/portfolio/teste3.png"} />
+                    <img src={"images/portfolio/tiki_1.png"} />
+                    <img src={"images/portfolio/tiki_2.png"} />
+                    <img src={"images/portfolio/tiki_3.png"} />
+                    <img src={"images/portfolio/tiki_4.png"} />
+                    <img src={"images/portfolio/tiki_5.png"} />
+                    <img src={"images/portfolio/tiki_apng.png"} />
                   </Carousel>
                 </div>
                 
                 <div className="portfolio-item-meta">
                   <h5>LISY - A LIPSYNC SOFTWARE</h5>
-                  <p>EASESAAS</p>
+                  <p>O LISY é um software para síncronia lábial e facial de modelos 3D ou 2D. Com o Lisy, é possível síncronizar a fala
+                    em tempo real em qualquer aplicação. O Lisy é vencedor do prêmio Inove Olos.
+                  </p>
 
                   <Carousel
                     className={"portfolio-carousel"}
@@ -85,15 +87,18 @@ class Portfolio extends Component {
                     arrowRight={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowRight portfolio-carousel-arrows portfolio-carousel-arrow-right"><span>next</span></button>}
                     addArrowClickHandler
                     >
-                    <img src={"images/portfolio/teste.png"} />
                     <img src={"images/portfolio/teste2.png"} />
                     <img src={"images/portfolio/teste3.png"} />
+                    <img src={"images/portfolio/lisy_apng.png"} />
                   </Carousel>
                 </div>
 
                 <div className="portfolio-item-meta">
                   <h5>VÍDEO BOT</h5>
-                  <p>EASESAAS</p>
+                  <p>Vídeo Bot, chamado também como OWI é uma aplicação Web Mobile para resolver qualquer tipo de problema, 
+                    como: dúvidas de algum produto, venda,
+                    apresentação de produtos, etc.
+                  </p>
 
                   <Carousel
                     className={"portfolio-carousel"}
@@ -105,15 +110,20 @@ class Portfolio extends Component {
                     arrowRight={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowRight portfolio-carousel-arrows portfolio-carousel-arrow-right"><span>next</span></button>}
                     addArrowClickHandler
                     >
-                    <img src={"images/portfolio/teste.png"} />
-                    <img src={"images/portfolio/teste2.png"} />
-                    <img src={"images/portfolio/teste3.png"} />
+                    
+                    <img src={"images/portfolio/owi_1.png"} />
+                    <img src={"images/portfolio/owi_2.png"} />
+                    <img src={"images/portfolio/owi_3.png"} />
+                    <img src={"images/portfolio/owi_apng.png"} />
                   </Carousel>
                 </div>
 
                 <div className="portfolio-item-meta">
                   <h5>CONAREC - VR GOOGLE DREAM</h5>
-                  <p>EASESAAS</p>
+                  <p>Conarec VR foi um projeto para o maior e mais prestigiado evento de relacionamento com clientes da América Latina, o CONAREC.
+                    O projeto foi feito em Unity 3D utilizando a tecnologia do Google, o Google Dream. Fomos um dos primeiros
+                    a importar o produto dos Estados Unidos e aplica-lo no Brasil.
+                  </p>
 
                   <Carousel
                     className={"portfolio-carousel"}
@@ -125,9 +135,14 @@ class Portfolio extends Component {
                     arrowRight={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowRight portfolio-carousel-arrows portfolio-carousel-arrow-right"><span>next</span></button>}
                     addArrowClickHandler
                     >
-                    <img src={"images/portfolio/teste.png"} />
-                    <img src={"images/portfolio/teste2.png"} />
-                    <img src={"images/portfolio/teste3.png"} />
+                    
+                    <img src={"images/portfolio/conarec_1.png"} />
+                    <img src={"images/portfolio/conarec_2.png"} />
+                    <img src={"images/portfolio/conarec_3.png"} />
+                    <img src={"images/portfolio/conarec_4.jpg"} />
+                    <img src={"images/portfolio/conarec_5.jpg "} />
+                    <img src={"images/portfolio/conarec_apng.png"} />
+                    
                   </Carousel>
                 </div>
               </div>     

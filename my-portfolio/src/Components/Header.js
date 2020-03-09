@@ -20,20 +20,24 @@ class Header extends Component {
 	      <a className="mobile-btn" href="#home" title="Hide navigation">Hide navigation</a>
 
          <ul id="nav" className="nav">
-            <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
-            <li><a className="smoothscroll" href="#about">About</a></li>
-	         <li><a className="smoothscroll" href="#resume">Resume</a></li>
-            <li><a className="smoothscroll" href="#portfolio">Works</a></li>
+            <li className="current"><a className="smoothscroll" href="#home">Início</a></li>
+            <li><a className="smoothscroll" href="#about">Sobre</a></li>
+	         <li><a className="smoothscroll" href="#resume">Currículo</a></li>
+            <li><a className="smoothscroll" href="#portfolio">Trabalhos</a></li>
          </ul>
       </nav>
 
       <div className="row banner">
          <div className="banner-text">
             <h1 className="responsive-headline">Denis Ken</h1>
-            <h3>I'm a <span>developer</span>. asdasdsaddas .</h3>
+            <h3>Olá! Esse é meu portfolio, abaixo você vai conhecer 
+               um pouco mais sobre mim e sobre meus trabalhos
+            </h3>
             <hr />
             <ul className="social">
-               Github. Instagram.
+               <li><a href={"https://github.com/DenisKen"} target={"_blank"}>Github</a></li>
+               <li><a href={"https://www.instagram.com/deniskeni/"} target={"_blank"}>Instagram</a></li>
+               <li><a href={"https://www.linkedin.com/in/denisken/"} target={"_blank"}>Linkedin</a></li>
             </ul>
          </div>
       </div>

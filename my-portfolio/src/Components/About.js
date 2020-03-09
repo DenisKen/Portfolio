@@ -16,27 +16,35 @@ class About extends Component {
       <section id="about">
       <div className="row">
          <div className="three columns">
-            <img className="profile-pic"  src={profilepic} alt="Tim Baker Profile Pic" />
+            <img className="profile-pic"  src={"images/profile_pic.jpg"} alt="Denis Ken Profile Pic" />
          </div>
          <div className="nine columns main-col">
-            <h2>About Me</h2>
+            <h2>Sobre</h2>
 
-            <p>Eu descobri a paixão pela programação aos 16 anos,
-                quando meu primeiro projeto foi uma calculadora.<br/>
-                
+            <p>
+               Quando eu era criança, tinha aquele sonho de mudar o mundo. Mas depois que comecei a enfrentar a vida dura na fase adulta,
+               esse sonho desapareceu. 
+               <br/>
+               O comportamento muda, os objetivos mudam. Criamos uma máscara para se adequar a esse mundo regrado corporativo. Cada vez mais 
+               perdendo a própria essência.
+               <br/>
+               Prazer, pode me chamar de Denis Ken.
+               <br/>
+               Meu primeiro emprego foi como desenvolvedor de jogos, onde eu criei um jogo bem legal. 
+               Desde então, fui aprendendo e descobrindo coisas novas e interessantes sobre a minha área e sobre a vida.
+
+               Hoje sou programador, atuo no desenvolvimento de jogos. e há ainda muitas coisas novas e revolucionárias para se criar.
+               <br/>
+               E nesse mundo corporativo, estou sem máscara. Posso dizer que sou eu mesmo. :D
+
             </p>
             <div className="row">
                <div className="columns contact-details">
-                  <h2>Contact Details</h2>
+                  <h2>Contato</h2>
                   <p className="address">
 						   <span>Denis Ken</span><br/>
                      <span>hey@denis.ken</span>
 					   </p>
-               </div>
-               <div className="columns download">
-                  <p>
-                     <a href={resumeDownload} className="button"><i className="fa fa-download"></i>Download Resume</a>
-                  </p>
                </div>
             </div>
          </div>
