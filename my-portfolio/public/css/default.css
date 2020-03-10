@@ -756,7 +756,9 @@ properly.
 @media only screen and (max-width: 460px) {
 
    .row { width: auto; }
-
+   .portfolio-text{
+      padding: 0 20px;
+   }
 }
 
 /* larger screens
