@@ -27,20 +27,22 @@ class Resume extends Component {
 
       <div className="row education">
          <div className="three columns header-col">
-            <h1><span>Educação</span></h1>
+            <h1><span>Education</span></h1>
          </div>
 
          <div className="nine columns main-col">
             <div className="row item">
                <div className="twelve columns">
                   <h3>Senac Campus Santo Amaro</h3>
-                  <p className="info">Técnico em Jogos Digitais<span>&bull;</span><em className="date"> 2013</em></p>
-                  <p> 
-                     Esse curso abriu todas as portas que tenho hoje. Quando eu tinha 16, eu não estava conseguindo passar em nenhuma 
-                     prova dos cursos técnicos da região. E nesse curso, a inscrição era por ordem de chegada e renda. Foi aí que consegui
-                     minha primeira oportunidade.
+                  <p className="info">Certificate in Digital Games<span>&bull;</span><em className="date"> 2013</em></p>
+                  <p>
+                     This course opened all the doors I have today. When I was 16, I was unable to pass any 
+                     proof of courses in the region. And in this course, subscription was 
+                     by order of arrival and familiar income. That's when I got 
+                     my first opportunity.
                      <br/>
-                     Aprendi sobre o mundo da programação. Fui um dos melhores alunos. E logo depois de terminar o curso, comecei minha faculdade.
+                     I learned about the world of programming. I was one of the best students. 
+                     And after finishing the course I started my graduation.
                   </p>
                </div>
             </div>
@@ -49,12 +51,12 @@ class Resume extends Component {
             <div className="row item">
                <div className="twelve columns">
                   <h3>Senac Campus Santo Amaro</h3>
-                  <p className="info">Graduação em Jogos Digitais<span>&bull;</span><em className="date"> 2016</em></p>
+                  <p className="info">Graduation in Game Development<span>&bull;</span><em className="date"> 2016</em></p>
                   <p>
-                     Na faculdade, tive um reforço do que aprendi no técnico. Por causa do técnico eu já estava bem mais
-                     avançado do que o pessoal da minha sala.
-                     <br/>
-                     Eu desenvolvi alguns mini jogos durante os tempos livres da faculdade, o que me deu uma boa noção de programação.
+                  At graduation, I learned more deeply about game development. Again, I was one of the best students.
+                  <br/>
+                  I developed some mini games during free time of my gradution, 
+                  it gave me a good sense of programming.
                   </p>
                </div>
             </div>
@@ -65,39 +67,40 @@ class Resume extends Component {
       <div className="row work">
 
          <div className="three columns header-col">
-            <h1><span>Trabalho</span></h1>
+            <h1><span>Work</span></h1>
          </div>
 
          <div className="nine columns main-col">
             <h3>CIT - Senac</h3>
             <p className="info">Game Developer<span>&bull;</span><em className="date">Mai 2016 - Nov 2016</em></p>
-            <p>Após ter feito um projeto de iniciação científica e ter um artigo publicado, consegui uma indicação para o CIT Senac. 
-               Onde eu programei todo o jogo, participei das reuniões com o cliente, definição e implementação do jogo TIKI.
+            <p>After creating a project of Scientific Research and published an article, I got a nomination for CIT Senac.
+               Where I programmed the intire game, I participated in meetings with the customer, We defined the game and
+               we reproduced the game for <a href={"https://www.menteturbinada.com.br/"} target={"_blank"}>https://www.menteturbinada.com.br/</a>
             </p>
             <h3>OLOS - Tecnologia e Sistemas</h3>
             <p className="info">Developer<span>&bull;</span><em className="date">Nov 2016 - Até agora</em>  </p>
-            <p>Recebi a proposta de emprego via Linkedin de um dos donos da empresa. Entrei na empresa
-               para produzir aplicações inovadoras. 
+            <p>
+               I received the job offer via Linkedin from one of the owners of the company. I joined the company to develop innovative applications.
                <br/>
-               Desenvolvi aplicações usando Javascript e Unity. Um dos meus projetos criados, conseguiu o 1° lugar no evento
-               Inove Olos, ganhando o prêmio de R$ 70 mil.
+               I developed some applicaton using Javascript and Unity. We made applications to great customers like Santander, 
+               Claro, Atento, Sky and more. 
             </p>
         </div>
-    </div>
+      </div>
 
 
 
       <div className="row skill">
 
          <div className="three columns header-col">
-            <h1><span>Habilidades</span></h1>
+            <h1><span>Skills</span></h1>
          </div>
 
          <div className="nine columns main-col">
 
             <p>
-            Pra mim, um dia sem aprender nada, é um dia perdido. Estou sempre 
-            procurando coisas novas e desafiadoras para fazer.
+               Form me, a day without learning anything is a lost day.
+               I'm always looking for new and challenging things to do.
             </p>
 
 				<div className="bars">
@@ -114,6 +117,23 @@ class Resume extends Component {
 				</div>
 			</div>
       </div>
+
+      <div className="row">
+
+         <div className="three columns header-col">
+            <h1><span>Awards</span></h1>
+         </div>
+
+         <div className="nine columns main-col">
+            <h3>Inove Olos</h3>
+            <p className="info">1st Place<span>&bull;</span><em className="date">R$ 70.000 reward</em></p>
+            <p>
+               The invention of Lisy, a software of lip syncronization for 3D models guaranteed me the 1st place of Inove Olos.
+               The Inove Olos is a competition where the most innovative applications compete with each other.
+            </p>
+        </div>
+      </div>
+
    </section>
     );
   }

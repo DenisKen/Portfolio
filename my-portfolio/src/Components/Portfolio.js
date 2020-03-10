@@ -41,13 +41,15 @@ class Portfolio extends Component {
 
           <div className="twelve columns collapsed">
 
-              <h1>VEJA ALGUNS DOS MEUS TRABALHOS.</h1>
+              <h1>SEE SOME OF MY WORKS.</h1>
 
               <div className="overlay">
                 <div className="portfolio-item-meta">
                 <h5>TIKI</h5>
-                  <p>TIKI Game foi meu primeiro jogo desenvolvido em UNITY 3D. A parte mais divertida de
-                    desenvolve-lo foi criar a comunicação dos cubos. Cada cubo se comunica com os adjacentes, usando recursividade.  
+                  <p>
+                    TIKI Game was my first game made in Unity 3D. 
+                    The coolest part of develop it was create the cube's communications.
+                    Each cube communicates with adjancentes, using recursive methods.
                   </p>
                   {this.state.width > 932 ? null : null}
                   <Carousel
@@ -73,8 +75,10 @@ class Portfolio extends Component {
                 
                 <div className="portfolio-item-meta">
                   <h5>LISY - A LIPSYNC SOFTWARE</h5>
-                  <p>O LISY é um software para síncronia lábial e facial de modelos 3D ou 2D. Com o Lisy, é possível síncronizar a fala
-                    em tempo real em qualquer aplicação. O Lisy é vencedor do prêmio Inove Olos.
+                  <p>
+                    LISY is a software of lip synchronization of 3D models. With LISY, 
+                    it's possible synchronize speech in real time in any application!
+                    Lisy is the winner of Inove Olos award.
                   </p>
 
                   <Carousel
@@ -96,10 +100,10 @@ class Portfolio extends Component {
                 </div>
 
                 <div className="portfolio-item-meta">
-                  <h5>VÍDEO BOT</h5>
-                  <p>Vídeo Bot, chamado também como OWI é uma aplicação Web Mobile para resolver qualquer tipo de problema, 
-                    como: dúvidas de algum produto, venda,
-                    apresentação de produtos, etc.
+                  <h5>VIDEO BOT</h5>
+                  <p>
+                    Video Bot, also called as OWI is a Web Mobile application to solve any kind of problem.
+                    Like: product questions, sale, product presentation, etc.
                   </p>
 
                   <Carousel
@@ -122,9 +126,10 @@ class Portfolio extends Component {
 
                 <div className="portfolio-item-meta">
                   <h5>CONAREC - VR GOOGLE DREAM</h5>
-                  <p>Conarec VR foi um projeto para o maior e mais prestigiado evento de relacionamento com clientes da América Latina, o CONAREC.
-                    O projeto foi feito em Unity 3D utilizando a tecnologia do Google, o Google Dream. Fomos um dos primeiros
-                    a importar o produto dos Estados Unidos e aplica-lo no Brasil.
+                  <p>
+                    Conarec VR was a project for the most prestigious customer relationship event in Latin America, the CONAREC event.
+                    The project was developed in Unity 3D using Google Dream technology. We were one of the first
+                    people to import the product from the EUA and apply it in Brazil.
                   </p>
 
                   <Carousel
