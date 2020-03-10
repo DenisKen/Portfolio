@@ -87,8 +87,10 @@ class Portfolio extends Component {
                     arrowRight={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowRight portfolio-carousel-arrows portfolio-carousel-arrow-right"><span>next</span></button>}
                     addArrowClickHandler
                     >
-                    <img src={"images/portfolio/teste2.png"} />
-                    <img src={"images/portfolio/teste3.png"} />
+                    <img src={"images/portfolio/lisy_2.png"} />
+                    <img src={"images/portfolio/lisy_1.png"} />
+                    <img src={"images/portfolio/lisy_3.png"} />
+                    <img src={"images/portfolio/lisy_4.png"} />
                     <img src={"images/portfolio/lisy_apng.png"} />
                   </Carousel>
                 </div>
@@ -139,8 +141,8 @@ class Portfolio extends Component {
                     <img src={"images/portfolio/conarec_1.png"} />
                     <img src={"images/portfolio/conarec_2.png"} />
                     <img src={"images/portfolio/conarec_3.png"} />
-                    <img src={"images/portfolio/conarec_4.jpg"} />
-                    <img src={"images/portfolio/conarec_5.jpg "} />
+                    <img src={"images/portfolio/conarec_4.png"} />
+                    <img src={"images/portfolio/conarec_5.png "} />
                     <img src={"images/portfolio/conarec_apng.png"} />
                     
                   </Carousel>

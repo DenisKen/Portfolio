@@ -35,9 +35,15 @@ class Header extends Component {
             </h3>
             <hr />
             <ul className="social">
-               <li><a href={"https://github.com/DenisKen"} target={"_blank"}>Github</a></li>
-               <li><a href={"https://www.instagram.com/deniskeni/"} target={"_blank"}>Instagram</a></li>
-               <li><a href={"https://www.linkedin.com/in/denisken/"} target={"_blank"}>Linkedin</a></li>
+               <li>
+                  <a href={"https://github.com/DenisKen"} target={"_blank"} className="fa fa-github"/>
+               </li>
+               <li>
+                  <a href={"https://www.instagram.com/deniskeni/"} target={"_blank"} className="fa fa-instagram"/>
+                  </li>
+               <li>
+                  <a href={"https://www.linkedin.com/in/denisken/"} target={"_blank"} className="fa fa-linkedin" />
+               </li>
             </ul>
          </div>
       </div>
