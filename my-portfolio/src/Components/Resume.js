@@ -128,7 +128,7 @@ class Resume extends Component {
             <h3>Inove Olos</h3>
             <p className="info">1st Place<span>&bull;</span><em className="date">R$ 70.000 reward</em></p>
             <p>
-               The invention of Lisy, a software of lip syncronization for 3D models guaranteed me the 1st place of Inove Olos.
+               I created Lisy, a software of lip syncronization for 3D models that guaranteed me the 1st place of Inove Olos.
                The Inove Olos is a competition where the most innovative applications compete with each other.
             </p>
         </div>

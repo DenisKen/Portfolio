@@ -13,9 +13,6 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      foo: 'bar',
-      resumeData: {
-      }
     };
 
     //ReactGA.initialize('UA-110570651-1');
@@ -23,35 +20,14 @@ class App extends Component {
 
   }
 
-  getResumeData(){
-    /*
-    $.ajax({
-      url:'/resumeData.json',
-      dataType:'json',
-      cache: false,
-      success: function(data){
-        this.setState({resumeData: data});
-      }.bind(this),
-      error: function(xhr, status, err){
-        console.log(err);
-        alert(err);
-      }
-    });
-    */
-  }
-
-  componentDidMount(){
-    this.getResumeData();
-  }
-
   render() {
     return (
       <div className="App">
         <Header/>
-        <About data={this.state.resumeData.x}/>
-        <Resume data={this.state.resumeData.resume}/>
-        <Portfolio data={this.state.resumeData.portfolio}/>
-        <Footer data={this.state.resumeData.x}/>
+        <About />
+        <Resume />
+        <Portfolio />
+        <Footer/>
       </div>
     );
   }
