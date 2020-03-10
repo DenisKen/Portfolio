@@ -22,23 +22,14 @@ class About extends Component {
          </div>
          <div className="nine columns main-col">
             <h2>Sobre</h2>
-
             <p>
-               Quando eu era criança, tinha aquele sonho de mudar o mundo. Mas depois que comecei a enfrentar a vida dura na fase adulta,
-               esse sonho desapareceu. 
+               Eu amo novos desafios e aprender coisas novas. Desenvolvi jogos em Unity,
+               para WebGL, Android e até mesmo Virtual Reality, utilizando o Google Dream.
                <br/>
-               O comportamento muda, os objetivos mudam. Criamos uma máscara para se adequar a esse mundo regrado corporativo. Cada vez mais 
-               perdendo a própria essência.
-               <br/>
-               Prazer, pode me chamar de Denis Ken.
-               <br/>
-               Meu primeiro emprego foi como desenvolvedor de jogos, onde eu criei um jogo bem legal. 
-               Desde então, fui aprendendo e descobrindo coisas novas e interessantes sobre a minha área e sobre a vida.
-
-               Hoje sou programador, atuo no desenvolvimento de jogos. e há ainda muitas coisas novas e revolucionárias para se criar.
-               <br/>
-               E nesse mundo corporativo, estou sem máscara. Posso dizer que sou eu mesmo. :D
-
+               Desenvolvi aplicações para Web Mobile, onde tive desafios de transformar uma
+               engine 2D, capaz de reproduzir 3D. E consegui algumas conquistas e prêmios
+               por esse meu lado de desbravar o desconhecido e sempre estar disposto a aprender
+               novas coisas.
             </p>
             <div className="row">
                <div className="columns contact-details">

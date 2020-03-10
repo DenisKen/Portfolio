@@ -96,8 +96,8 @@ class Resume extends Component {
          <div className="nine columns main-col">
 
             <p>
-            Pra mim, um dia sem aprender nada, é um dia perdido. Estou sempre procurando coisas novas e desafiadoras para fazer. 
-            Javascript e threeJS foram algumas linguagens que aprendi sozinho.
+            Pra mim, um dia sem aprender nada, é um dia perdido. Estou sempre 
+            procurando coisas novas e desafiadoras para fazer.
             </p>
 
 				<div className="bars">
