@@ -41,8 +41,7 @@ class Resume extends Component {
                      by order of arrival and familiar income. That's when I got 
                      my first opportunity.
                      <br/>
-                     I learned about the world of programming. I was one of the best students. 
-                     And after finishing the course I started my graduation.
+                     I learned about the world of programming. After finishing the course I started my graduation.
                   </p>
                </div>
             </div>
@@ -53,7 +52,7 @@ class Resume extends Component {
                   <h3>Senac Campus Santo Amaro</h3>
                   <p className="info">Graduation in Game Development<span>&bull;</span><em className="date"> 2016</em></p>
                   <p>
-                  At graduation, I learned more deeply about game development. Again, I was one of the best students.
+                  At graduation, I learned more deeply about game development.
                   <br/>
                   I developed some mini games during free time of my gradution, 
                   it gave me a good sense of programming.
