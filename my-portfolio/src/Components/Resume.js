@@ -74,7 +74,7 @@ class Resume extends Component {
             <h3>CIT - Senac</h3>
             <p className="info">Game Developer<span>&bull;</span><em className="date">Mai 2016 - Nov 2016</em></p>
             <p>After creating a project of Scientific Research and published an article, I got a nomination for CIT Senac.
-               Where I programmed the intire game, I participated in meetings with the customer, We defined the game and
+               Where I programmed the entire game, I attended meetings with the customer, We defined the game and
                we reproduced the game for <a href={"https://www.menteturbinada.com.br/"} target={"_blank"}>https://www.menteturbinada.com.br/</a>
             </p>
             <h3>OLOS - Tecnologia e Sistemas</h3>
