@@ -52,6 +52,8 @@ class Portfolio extends Component {
                   centered
                   clickToChange
                   infinite
+                  animationSpeed={2500}
+                  autoPlay={6000}
                   
                   slidesPerPage={this.state.slidePerPage}
                   arrowLeft={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowLeft portfolio-carousel-arrows"><span>next</span></button>}
@@ -82,6 +84,8 @@ class Portfolio extends Component {
                     clickToChange
                     infinite
                     slidesPerPage={this.state.slidePerPage}
+                    animationSpeed={2500}
+                  autoPlay={6500}
                     arrowLeft={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowLeft portfolio-carousel-arrows"><span>next</span></button>}
                     arrowRight={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowRight portfolio-carousel-arrows portfolio-carousel-arrow-right"><span>next</span></button>}
                     addArrowClickHandler
@@ -106,6 +110,8 @@ class Portfolio extends Component {
                     centered
                     clickToChange
                     infinite
+                    animationSpeed={2500}
+                  autoPlay={7000}
                     slidesPerPage={this.state.slidePerPage}
                     arrowLeft={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowLeft portfolio-carousel-arrows"><span>next</span></button>}
                     arrowRight={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowRight portfolio-carousel-arrows portfolio-carousel-arrow-right"><span>next</span></button>}
@@ -132,6 +138,8 @@ class Portfolio extends Component {
                     centered
                     clickToChange
                     infinite
+                    animationSpeed={2500}
+                  autoPlay={7500}
                     slidesPerPage={this.state.slidePerPage}
                     arrowLeft={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowLeft portfolio-carousel-arrows"><span>next</span></button>}
                     arrowRight={<button class="BrainhubCarousel__arrows BrainhubCarousel__arrowRight portfolio-carousel-arrows portfolio-carousel-arrow-right"><span>next</span></button>}
