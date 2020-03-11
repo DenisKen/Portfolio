@@ -453,6 +453,9 @@ ul#nav li.current a { color: #F06000; }
    z-index: 2  !important;
    background-color: transparent  !important;
 }
+.portfolio-carousel-arrows span{
+   border-color: #F06000 !important;
+}
 .portfolio-carousel-arrows hover{
    background-color: transparent;
 }
