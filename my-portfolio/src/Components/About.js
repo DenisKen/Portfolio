@@ -28,8 +28,7 @@ class About extends Component {
                <br/>
                I developed applications for Web Mobile, where I had challenges to 
                transform a 2D engine, capable of reproducing 3D. And I got 
-               some achievements and awards on this side of me to 
-               explore the unknown and always be willing to learn new things.
+               some achievements and awards that I am very proud!
             </p>
             <div className="row">
                <div className="columns contact-details">
