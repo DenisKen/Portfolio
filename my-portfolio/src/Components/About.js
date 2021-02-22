@@ -26,7 +26,7 @@ class About extends Component {
                I like new challenges and learn new things. I developed games on Unity, 
                for WebGL, Android and even Virtual Reality, using Google Dream.
                <br/>
-               I developed applications for Web Mobile, where I had challenges to 
+               I developed applications for Mobile and Web Mobile, where I had challenges to 
                transform a 2D engine, capable of reproducing 3D. And I got 
                some achievements and awards that I am very proud!
             </p>

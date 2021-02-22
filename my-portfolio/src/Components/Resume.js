@@ -98,20 +98,22 @@ class Resume extends Component {
          <div className="nine columns main-col">
 
             <p>
-               Form me, a day without learning anything is a lost day.
+               A day without learning anything is a lost day.
                I'm always looking for new and challenging things to do.
             </p>
 
 				<div className="bars">
 				<ul className="skills">
-              <li><span style={{width:"40%"}}className={"bar-expand"}></span><em>{"GIT"}</em></li>
-              <li key={"Javascript"}><span style={{width:"40%"}}className={"bar-expand"}></span><em>{"Javascript"}</em></li>
+              
+               <li key={"Flutter"}><span style={{width:"40%"}}className={"bar-expand"}></span><em>{"Flutter"}</em></li>
               <li key={"Unity 3D"}><span style={{width:"40%"}}className={"bar-expand"}></span><em>{"Unity 3D"}</em></li>
               <li key={"HTML"}><span style={{width:"40%"}}className={"bar-expand"}></span><em>{"HTML"}</em></li>
               <li key={"CSS"}><span style={{width:"40%"}}className={"bar-expand"}></span><em>{"CSS"}</em></li>
+              <li key={"Javascript"}><span style={{width:"40%"}}className={"bar-expand"}></span><em>{"Javascript"}</em></li>
               <li key={"Three js"}><span style={{width:"40%"}}className={"bar-expand"}></span><em>{"Three js"}</em></li>
+              <li><span style={{width:"40%"}}className={"bar-expand"}></span><em>{"GIT"}</em></li>
+              <li key={"UI/UX"}><span style={{width:"40%"}}className={"bar-expand"}></span><em>{"UI/UX"}</em></li>
               <li key={"React js"}><span style={{width:"40%"}}className={"bar-expand"}></span><em>{"React js"}</em></li>
-              <li key={"Construct 2"}><span style={{width:"40%"}}className={"bar-expand"}></span><em>{"Construct 2"}</em></li>
 					</ul>
 				</div>
 			</div>
